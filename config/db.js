@@ -81,6 +81,13 @@ let DBObj = {
       }
     })
   },
+  mongooseInitMW: () => {
+    return (req, res, next) => {
+      DBObj.mongooseInit().then(res => {
+        next()
+      }).catch(err => next(err));
+    }
+  },
 
   getCurrentModel: (itemModel) => {
     switch(itemModel) {
@@ -91,35 +98,36 @@ let DBObj = {
     };
   },
 
-  checkItemExistanceById: (itemModel, itemId, selectFields) => {
+  checkManyItemsExistance: (itemModel, itemArray) => {
     return new Promise((resolve, reject) => {
-      DBObj.mongooseInit().then(DBRes => {
-        //* set Item model
-        let currentModel = DBObj.getCurrentModel(itemModel);
-        
-        //* find Item by Id
-        currentModel.findById(itemId, selectFields ? selectFields : '', (findErr, findRes) => {
-          if(findErr) {
-            reject(findErr)
-          }else {
-            resolve(findRes);
-          }
-          
-        })
+      DBObj.mongooseInit.then(DBRes => {
+
+        itemModel.find({ _id: {$in: itemArray}})
+          .then(findRes => {
+            if(itemArray.length != findRes?.length) {
+              reject({
+                msg: 'not all items exist',
+                itemsArray,
+                findRes
+              })
+            }else {
+              resolve(true)
+            }
+          }).catch(findErr => reject(findErr))
       }).catch(DBErr => reject(DBErr))
     })
   },
 
   checkItemExistance: (itemModel, itemField, selectFields) => {
-    console.log("itemField", itemField)
-    console.log("itemModel", itemModel)
+    // console.log("itemField", itemField)
+    // console.log("itemModel", itemModel)
     return new Promise((resolve, reject) => {
       DBObj.mongooseInit().then(DBRes => {
         //* set Item model
-        let currentModel = DBObj.getCurrentModel(itemModel);
+        // let currentModel = DBObj.getCurrentModel(itemModel);
         
-        //* find Item by Id
-        currentModel.findOne(itemField, selectFields ? selectFields : '', (findErr, findRes) => {
+        //* find Item by any field
+        itemModel.findOne(itemField, selectFields ? selectFields : '', (findErr, findRes) => {
           if(findErr) {
             reject(findErr)
           }else {

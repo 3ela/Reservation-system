@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "nodemon index.js",
+    "serve:dev": "nodemon -r dotenv/config index.js dotenv_config_path=/Code/GDS/server/.env.development",
     "test": "jest"
   },
   "keywords": [
@@ -22,6 +23,7 @@
     "express": "^4.18.1",
     "express-validator": "^6.14.2",
     "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.3",
     "morgan": "^1.10.0",

@@ -10,23 +10,23 @@ const {
 } = require('../scripts/validators');
 const { RoomModel } = require('../models/hotel_room_models');
 
+
 router.post('/', validateUser, (req, res, next) => {
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
-    RoomModel.find({}, (findErr, findRes) => {
-      if(findErr) {
-        res.status(500).json({
-          msg: `Error in Listing Romms`,
-          err: findErr
-        });
-      }else {
-        res.status(200).json({
-          msg: `Rooms found`,
-          data: findRes
-        });
-      }
-    })
-  }).catch(DBerr => next(DBerr))
+
+  RoomModel.find({}, (findErr, findRes) => {
+    if(findErr) {
+      res.status(500).json({
+        msg: `Error in Listing Romms`,
+        err: findErr
+      });
+    }else {
+      res.status(200).json({
+        msg: `Rooms found`,
+        data: findRes
+      });
+    }
+  })
+
 });
 
 //? ---- Room Model
@@ -36,40 +36,34 @@ router.post('/create', validateUser, roomValids, (req, res, next) => {
   //* validate data
   validateReq(req, res);
 
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
-
-    //* else create the room
-    RoomModel.create(payload, (createErr, createRes) => {
-      if(createErr) {
-        res.status(400).json({
-          err: createErr
-        });
-      }else {
-        res.status(200).json({
-          msg: `Room Created`,
-          data: createRes
-        });
-      }
-    })
-  }).catch(DBerr => next(DBerr))
+  //* create the room
+  RoomModel.create(payload, (createErr, createRes) => {
+    if(createErr) {
+      res.status(400).json({
+        err: createErr
+      });
+    }else {
+      res.status(200).json({
+        msg: `Room Created`,
+        data: createRes
+      });
+    }
+  })
 });
 
 router.post('/:id', validateUser, (req, res, next) => {
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
-    RoomModel.findById(req.params.id).then(findRes => {
-      if(findRes == null) {
-        res.status(404).json({
-          msg: `Room does not exist`,
-        });
-      }
-      res.status(200).json({
-        msg: `Room Found`,
-        data: findRes
+
+  RoomModel.findById(req.params.id).then(findRes => {
+    if(findRes == null) {
+      res.status(404).json({
+        msg: `Room does not exist`,
       });
-    }).catch(findErr => next(findErr))
-  }).catch(DBerr => next(DBerr))
+    }
+    res.status(200).json({
+      msg: `Room Found`,
+      data: findRes
+    });
+  }).catch(findErr => next(findErr))
 });
 
 //? ----- look room model to see pre post hooks
@@ -85,50 +79,45 @@ router.put('/:id/update', validateUser, roomValids, (req, res, next) => {
     amenities_ids: req.body.amenities_ids,
     id: req.params.id
   };
+  let options = {
+    returnDocument: 'after', 
+    runValidators: true
+  }
   //* validate data
   validateReq(req, res);
   
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
-    let options = {
-      returnDocument: 'after'
+  //* update room
+  RoomModel.findOneAndUpdate({ _id: payload.id }, payload, options, (updateErr, updateRes) => {
+    if(updateErr) {
+      res.status(500).json({
+        msg: `update Error`,
+        err: updateErr
+      });
+    }else {
+      res.status(200).json({
+        msg: `Update successfully`,
+        data: updateRes
+      });
     }
-    //* update room
-    RoomModel.findOneAndUpdate({ _id: payload.id }, payload, options, (updateErr, updateRes) => {
-      if(updateErr) {
-        res.status(500).json({
-          msg: `update Error`,
-          err: updateErr
-        });
-      }else {
-        res.status(200).json({
-          msg: `Update successfully`,
-          data: updateRes
-        });
-      }
-    })
-  }).catch(DBerr => next(DBerr))
+  })
 });
 
 //? ----- look room model to see pre post hooks
 router.delete('/:id/delete', validateUser, (req, res, next) => {
   let payload = req.params.id;
 
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
-    RoomModel.findOneAndDelete({ _id: payload })
-    .then(removeRes => {
-      res.status(200).json({
-        msg: `remove success`,
-        data: removeRes
-      });
-    }).catch(removeErr => {
-      res.status(500).json({
-        msg: `Remove Error`,
-        err: removeErr
-      });
-    })
-  }).catch(DBerr => next(DBerr))
+  RoomModel.findOneAndDelete({ _id: payload })
+  .then(removeRes => {
+    res.status(200).json({
+      msg: `remove success`,
+      data: removeRes
+    });
+  }).catch(removeErr => {
+    res.status(500).json({
+      msg: `Remove Error`,
+      err: removeErr
+    });
+  })
 });
 
 router.delete('/many', validateUser, roomDeleteManyValids, (req, res, next) => {
@@ -139,21 +128,18 @@ router.delete('/many', validateUser, roomDeleteManyValids, (req, res, next) => {
   //* validate data
   validateReq(req, res);
 
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
-    RoomModel.deleteMany({ _id: { $in: [...payload] } })
-    .then(removeRes => {
-      res.status(200).json({
-        msg: `remove success`,
-        data: removeRes
-      });
-    }).catch(removeErr => {
-      res.status(500).json({
-        msg: `Remove Error`,
-        err: removeErr
-      });
-    })
-  }).catch(DBerr => next(DBerr))
+  RoomModel.deleteMany({ _id: { $in: [...payload] } })
+  .then(removeRes => {
+    res.status(200).json({
+      msg: `remove success`,
+      data: removeRes
+    });
+  }).catch(removeErr => {
+    res.status(500).json({
+      msg: `Remove Error`,
+      err: removeErr
+    });
+  })
 });
 
 
@@ -161,3 +147,4 @@ router.delete('/many', validateUser, roomDeleteManyValids, (req, res, next) => {
 
 module.exports = router;
 
+// todo room data validation

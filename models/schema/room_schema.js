@@ -19,9 +19,15 @@ const schema = new Schema({
      required: true
   },
   reserve_status: {
-     type: Boolean,
-     default: false
-   },
+    type: Boolean,
+    default: false
+  },
+  reserve_module: {
+    type: String,
+    enum: ['trips', 'rooms'],
+    default: 'rooms',
+    required: true
+  },
 
   // forign keys
   amenities_ids: [{

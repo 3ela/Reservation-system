@@ -10,10 +10,8 @@ validatorsObj = {
   validateReq: (req, res) => {
     let result = validationResult(req).formatWith(errorFormatter);
     if(!result.isEmpty()) {
-      res.status(401).json({
-        msg: 'data invalid',
-        ...result.mapped()
-      })
+      let ValidationErr = new Error(`Validation Err`, {cause: {...result.mapped()} });
+      throw ValidationErr;
     }
   },
 
@@ -59,7 +57,27 @@ validatorsObj = {
   amenityValids: [
     // check('number', 'number is required').not().isEmpty(),
 
-  ]
+  ],
+  transValids: [
+    // check('number', 'number is required').not().isEmpty(),
+
+  ],
+  reserveValids: [
+    // check('number', 'number is required').not().isEmpty(),
+
+  ],
+  placeValids: [
+    // check('number', 'number is required').not().isEmpty(),
+
+  ],
+  tripValids: [
+    // check('number', 'number is required').not().isEmpty(),
+
+  ],
+  routeValids: [
+    // check('number', 'number is required').not().isEmpty(),
+
+  ],
 };
 
 module.exports = validatorsObj;

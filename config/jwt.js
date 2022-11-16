@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 let jwtObj = {
   createJwt: (payload) => {
     return new Promise ((resolve, reject) => {
-      jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '3d' }, 
+      jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: process.env.JWT_EXPIRE_TIME || '3d' }, 
         (err, token) => {
           if(err) {
             reject(err);

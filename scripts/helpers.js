@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const moment = require('moment');
 
 helpersObj = {
   currentDate: () => {
@@ -16,6 +17,18 @@ helpersObj = {
       return -1;
     }
   },
+  formateDate(date, formateFrom, formateTo) {
+    if(date) {
+      let formatedDate = moment(date, formateFrom || ``).format(formateTo || `MM-DD-YYYY`);
+      return formatedDate == "invalid date" ? undefined : formatedDate;
+    } else {
+      return undefined;
+    }
+  },
+  isDatePassed(date) {
+    let difference = date.diff(moment());
+    return difference < 0;
+  }
 };
 
 module.exports = helpersObj

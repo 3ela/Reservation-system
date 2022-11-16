@@ -2,14 +2,15 @@ var express = require('express');
 var router = express.Router();
 const { authUser } = require('../config/permissions');
 const { validateUser } = require('../config/jwt');
-const { validateReq, reserveValids } = require('../scripts/validators');
-const ItemModel = require('../models/reservation_model');
-const { formateDate } = require('../scripts/helpers');
+const { validateReq, placeValids: itemValids  } = require('../scripts/validators');
+const ItemModel = require('../models/places_model');
 
 
 router.post('/', validateUser, authUser, (req, res, next) => {
+  let payload = { ...req.body };
+  let areaType = payload.type == 'city' ? false : true; 
 
-  ItemModel.find({})
+  ItemModel.find({ parent_id: {$exists: areaType} })
     .then(findRes => {
       res.status(200).json({
         msg: `Items Found`,
@@ -17,18 +18,16 @@ router.post('/', validateUser, authUser, (req, res, next) => {
       });
     }).catch(findErr => {
       res.status(400).json({
-        msg: `Error while listing Items`,
+        msg: `Error while listing items`,
         err: findErr
       });
     })
 });
 
 //? look at schema pre and post hooks
-router.post('/create', validateUser, authUser, reserveValids, (req, res, next) => {
-  let payload = {  ...req.body  };
-    //* formate Date
-    payload.period.start_date ? payload.period.start_date = formateDate(payload.period?.start_date, `DD-MM-YYYY`) : '';
-    payload.period.end_date ? payload.period.end_date = formateDate(payload.period?.end_date, `DD-MM-YYYY`) : '';
+router.post('/create', validateUser, authUser, itemValids, (req, res, next) => {
+  let payload = { ...req.body };
+  
   //* data validation
   validateReq(req, res);
 
@@ -60,7 +59,7 @@ router.post('/:id', validateUser, authUser, (req, res, next) => {
 
 
 
-router.put('/:id/update', validateUser, authUser, reserveValids, (req, res, next) => {
+router.put('/:id/update', validateUser, authUser, itemValids, (req, res, next) => {
   let payload = {
     ...req.body,
     id: req.params.id
@@ -90,7 +89,7 @@ router.put('/:id/update', validateUser, authUser, reserveValids, (req, res, next
 });
 
 
-router.patch('/:id/cancel', (req, res, next) => {
+router.delete('/:id', (req, res, next) => {
 
   ItemModel.findOneAndDelete({ _id: req.params.id })
     .then(deleteRes => {

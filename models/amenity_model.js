@@ -42,7 +42,6 @@ const schema = new Schema({
 schema.post('findOneAndDelete', async function(doc, next) {
   //* check rooms and hotels for existance
   //* then delete refrence
-  console.log(doc.id)
   await HotelModel.updateMany(
     { amenities_ids: { $in : doc.id } }, 
     { $pull: { amenities_ids: doc.id}}

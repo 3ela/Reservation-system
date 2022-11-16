@@ -11,6 +11,7 @@ const permissionObj = {
   authUser: (req, res, next) => {
     //* connect to the DB
     let neededAuthorization = null;
+
     
     let pathModel = req.baseUrl.slice(1);
     let pathFunction = req.url;
@@ -21,14 +22,14 @@ const permissionObj = {
         case `/`:
           neededAuthorization = `${pathModel}.list`;
           break;
-        case `/signup`:
-          neededAuthorization = `${pathModel}.create`;
-          break;
-        case `/create`:
-          neededAuthorization = `${pathModel}.create`;
-          break;
-        default: 
-          neededAuthorization = `${pathModel}.list`;
+          case `/signup`:
+            neededAuthorization = `${pathModel}.create`;
+            break;
+            case `/create`:
+              neededAuthorization = `${pathModel}.create`;
+              break;
+              default: 
+              neededAuthorization = `${pathModel}.list`;
       }
     } else if(pathMethod == `PUT`) {
       neededAuthorization = `${pathModel}.update`
@@ -37,7 +38,7 @@ const permissionObj = {
     } else if(pathMethod == `DELETE`) {
       neededAuthorization = `${pathModel}.delete`
     }
-      
+    
     //* connect to the DB
     mongooseInit().then(DBRes => {
       //* grab user perms from current role
@@ -57,7 +58,9 @@ const permissionObj = {
             });
           }
           //* if current role allow this action Or this route access => done
-          let isAuthorized = user.role_id.permissions.includes(neededAuthorization);
+          let isAuthorized = 
+            user.role_id.permissions.includes('admin')
+            || user.role_id.permissions.includes(neededAuthorization);
           if(isAuthorized) {
             req.authorizedUser = user;
             next();

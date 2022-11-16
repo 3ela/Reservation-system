@@ -9,16 +9,13 @@ const { amenityUpload } = require('../config/multer');
 
 router.post('/', validateUser, authUser, (req, res, next) => { 
   
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
-    AmenityModel.find({}) 
-    .then(findRes => {
-      res.status(200).json({
-        msg: `Amenities Found`,
-        data: findRes
-      });
-    }).catch(findErr => next(findErr))
-  }).catch(DBerr => next(DBerr))
+  AmenityModel.find({}) 
+  .then(findRes => {
+    res.status(200).json({
+      msg: `Amenities Found`,
+      data: findRes
+    });
+  }).catch(findErr => next(findErr))
 });
 
 
@@ -33,22 +30,17 @@ router.post('/create', validateUser, amenityUpload, amenityValids, (req, res, ne
   //* data validations
   validateReq(req, res);
   
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
-    AmenityModel.create(payload)
-    .then(createRes => {
-      res.status(200).json({
-        msg: `Created Successfully`,
-        data: createRes
-      });
-    }).catch(createErr  => next(createErr))
-  }).catch(DBerr => next(DBerr))
+  AmenityModel.create(payload)
+  .then(createRes => {
+    res.status(200).json({
+      msg: `Created Successfully`,
+      data: createRes
+    });
+  }).catch(createErr  => next(createErr))
 });
 
 router.post('/:id', validateUser, authUser, (req, res, next) => {
   
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
     AmenityModel.findById(req.params.id) 
     .then(findRes => {
       res.status(200).json({
@@ -56,7 +48,6 @@ router.post('/:id', validateUser, authUser, (req, res, next) => {
         data: findRes
       });
     }).catch(findErr => next(findErr))
-  }).catch(DBerr => next(DBerr))
 });
 
 router.put('/:id/update', validateUser, amenityValids, authUser, (req, res, next) => {
@@ -64,49 +55,48 @@ router.put('/:id/update', validateUser, amenityValids, authUser, (req, res, next
     ...req.body,
     id: req.params.id,
   }
+  let options = {
+    returnDocument: 'after', 
+    runValidators: true
+  }
+
   //* data validations
   validateReq(req, res);
 
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
-    AmenityModel.findOneAndUpdate({ _id: payload.id }, payload, { returnDocument: 'after'})
-    .then(updateRes => {
-      if(updateRes == null) {
-        res.status(404).json({
-          msg: `Amenity does not exist`,
-        });
-      }else {
-        res.status(200).json({
-          msg: `Updated Successfully`,
-          data: updateRes
-        });
-      }
-    }).catch(updateErr  => next(updateErr))
-  }).catch(DBerr => next(DBerr))
+  AmenityModel.findOneAndUpdate({ _id: payload.id }, payload, options)
+  .then(updateRes => {
+    if(updateRes == null) {
+      res.status(404).json({
+        msg: `Amenity does not exist`,
+      });
+    }else {
+      res.status(200).json({
+        msg: `Updated Successfully`,
+        data: updateRes
+      });
+    }
+  }).catch(updateErr  => next(updateErr))
 });
 
 
 router.delete('/:id/delete', validateUser, authUser, (req, res, next) => {
   let payload = req.params.id;
 
-  //* connect to the DB
-  mongooseInit().then(DBRes => {
-    AmenityModel.findOneAndDelete({ _id: payload })
-    .then(deleteRes => {
-      if(deleteRes == null) {
-        res.status(404).json({
-          msg: `Amenity does not exist`,
-        });
-      }else {
-        res.status(200).json({
-          msg: `Deleted Successfully`,
-          data: deleteRes
-        });
-      }
-    }).catch(deleteErr  => next(deleteErr))
-  }).catch(DBerr => next(DBerr))
+  AmenityModel.findOneAndDelete({ _id: payload })
+  .then(deleteRes => {
+    if(deleteRes == null) {
+      res.status(404).json({
+        msg: `Amenity does not exist`,
+      });
+    }else {
+      res.status(200).json({
+        msg: `Deleted Successfully`,
+        data: deleteRes
+      });
+    }
+  }).catch(deleteErr  => next(deleteErr))
 });
 
 
-
+// todo amenity data validation
 module.exports = router;

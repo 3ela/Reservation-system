@@ -4,7 +4,7 @@ const { getDuplicateIds } = require('../scripts/helpers');
 const  HotelSchema = require('./schema/hotel_schema');
 const  RoomSchema = require('./schema/room_schema');
 
-//* Room Model Hooks
+//* Hotel Model Hooks
 //* ---------------
 
 //* if user sent new rooms Or  
@@ -230,24 +230,63 @@ RoomSchema.post(['deleteMany', 'findOneAndDelete'], { query: true, document: fal
 
 function checkRoomInHotel(room_number, hotel_id, room_id) {
   return new Promise((resolve, reject) => {
+    let match;
+    let roomsLength = 1;
+
+    !room_id && !room_number 
+      ? reject({
+          message: 'Room Number or Room Id must exist'
+        })
+      : '';
+
+    if(!room_id) {
+      if(!Array.isArray(room_number)) {
+        match = {
+          number: room_number,
+        };
+      }else {
+        match = {
+          number:  { $in: [...room_number] },
+        };
+        roomsLength = room_number.length;
+      }
+    } else {
+      if(!Array.isArray(room_id)) {
+        match = {
+          id: room_id,
+        };
+      }else {
+        match = {
+          id:  { $in: [...room_id] },
+        };
+        roomsLength = room_id.length;
+      }
+    };
+
     HotelModel.findById(hotel_id, 'name _id')
     .populate({
       path: 'rooms_ids',
-      match: {
-        number: room_number,
-      }
+      match
     })
     .exec((findErr, findRes) => {
       if(findRes == null) {
         reject({
           hotel_id: hotel_id,
-          message: 'hotel doesn\'t exist'
+          msg: 'hotel doesn\'t exist'
         })
       }else if(findErr) {
         reject(findErr)
       }else {
         if (findRes?.rooms_ids.length != 0) {
-          resolve(findRes);
+          //* check if all rooms have been found 
+          if(roomsLength != 1 && findRes?.rooms_ids.length != roomsLength) {
+            reject({
+              msg: ` Some of the Rooms Ids Are Not found on the Hotel `,
+              err: findRes
+            })
+          } else {
+            resolve(findRes);
+          }
         }else {
           resolve(null)
         }
@@ -262,5 +301,6 @@ let RoomModel = mongoose.model('Room', RoomSchema);
 
 module.exports = {
   HotelModel,
-  RoomModel
+  RoomModel,
+  checkRoomInHotel
 }
