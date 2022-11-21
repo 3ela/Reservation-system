@@ -296,11 +296,46 @@ function checkRoomInHotel(room_number, hotel_id, room_id) {
   
 };
 
+function checkManyRoomsInHotel(hotel_id, rooms_ids) {
+  return new Promise((resolve, reject) => {
+    //* check for hotel existance
+    let match = {
+      reserve_module: 'trips',
+      trip_id: { $exists: false }
+    };
+    rooms_ids ? match.id = { $in: rooms_ids } : ''
+
+    HotelModel.findById(hotel_id)
+    .populate({
+      path: 'rooms_id',
+      match
+    }).exec((findErr, findRes) => {
+      if(findRes == null) {
+        reject({
+          msg: ` hotel was not found `,
+          hotel_id: hotel_id
+        })  
+      } else {
+        //* check if number of rooms is the same
+        if (findRes.rooms_ids.length > 0 &&  findRes.rooms_ids.length == rooms_ids.length) {
+          resolve(findRes)
+        } else {
+          reject({
+            msg: ` rooms data is incorrect `,
+            data: findRes
+          })
+        }
+      }
+    })
+  })
+}
+
 let HotelModel = mongoose.model('Hotel', HotelSchema);
 let RoomModel = mongoose.model('Room', RoomSchema);
 
 module.exports = {
   HotelModel,
   RoomModel,
-  checkRoomInHotel
+  checkRoomInHotel,
+  checkManyRoomsInHotel
 }

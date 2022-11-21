@@ -107,7 +107,7 @@ let DBObj = {
             if(itemArray.length != findRes?.length) {
               reject({
                 msg: 'not all items exist',
-                itemsArray,
+                itemArray,
                 findRes
               })
             }else {

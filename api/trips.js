@@ -11,12 +11,12 @@ router.post('/', validateUser, authUser, (req, res, next) => {
   ItemModel.find({})
     .then(findRes => {
       res.status(200).json({
-        msg: `Transports Found`,
+        msg: `Trips Found`,
         data: findRes
       });
     }).catch(findErr => {
       res.status(400).json({
-        msg: `Error while listing transports`,
+        msg: `Error while listing trips`,
         err: findErr
       });
     })
@@ -43,11 +43,11 @@ router.post('/:id', validateUser, authUser, (req, res, next) => {
     .then(findRes => {
       if(findRes == null) {
         res.status(404).json({
-          msg: `Transportaion does not exist`,
+          msg: `trip does not exist`,
         });
       }else {
         res.status(200).json({
-          msg: `Transportaion Found`,
+          msg: `trip Found`,
           data: findRes
         });
       }
@@ -69,11 +69,11 @@ router.put('/:id/update', validateUser, authUser, itemValids, (req, res, next) =
     .then(updateRes => {
       if(updateRes == null) {
         res.status(404).json({
-          msg: `Transport does not exist`,
+          msg: `trip does not exist`,
         }); 
       } else {
         res.status(200).json({
-          msg: `Transportation Updated`,
+          msg: `trip Updated`,
           data: updateRes
         });
       }

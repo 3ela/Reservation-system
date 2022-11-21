@@ -28,6 +28,16 @@ helpersObj = {
   isDatePassed(date) {
     let difference = date.diff(moment());
     return difference < 0;
+  },
+  differenceBetweenTwoArrays(firstArray, secondArray) {
+    let firstIntoSet = new Set(firstArray);
+    let result = [];
+    secondArray.forEach(el => {
+      if(!firstIntoSet.has(el)) {
+        result.push(el)
+      } 
+    })
+    return result;
   }
 };
 

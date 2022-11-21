@@ -106,6 +106,26 @@ function checkForTransportationCapacity(transId) {
   })
 }
 
+function checkTransportsAvailablility(transports_ids) {
+  return new Promise((resolve, reject) => {
+    TransportationModel.find(
+      { 
+        _id: { $in: transports_ids },
+        vehicle_status: 'available'
+      })
+      .then(findRes => {
+        if(findRes.length != transports_ids.length || findRes == null) {
+          reject({
+            msg: ` Not all transports are available `,
+            data: findRes
+          })
+        } else {
+          resolve(findRes)
+        }
+      })
+  })
+}
+
 
 //* models for this file
 let RouteModel = mongoose.model('Route', RouteSchema);
@@ -116,4 +136,5 @@ module.exports = {
   TransportationModel,
   RouteModel,
   checkForTransportationCapacity,
+  checkTransportsAvailablility
 }
