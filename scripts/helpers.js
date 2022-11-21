@@ -30,14 +30,22 @@ helpersObj = {
     return difference < 0;
   },
   differenceBetweenTwoArrays(firstArray, secondArray) {
-    let firstIntoSet = new Set(firstArray);
-    let result = [];
-    secondArray.forEach(el => {
-      if(!firstIntoSet.has(el)) {
-        result.push(el)
-      } 
-    })
-    return result;
+    if(!firstArray || (firstArray?.length && firstArray?.length == 0)) {
+      //* nothing exists in the first array to compare with the second
+      return [];
+    } else if(!secondArray || (secondArray?.length && secondArray?.length == 0)) {
+      //* nothing exists in the second array to compare with the first
+      return firstArray;
+    } else {
+      let firstIntoSet = new Set(firstArray);
+      let result = [];
+      secondArray.forEach(el => {
+        if(!firstIntoSet.has(el)) {
+          result.push(el)
+        } 
+      })
+      return result;
+    }
   }
 };
 

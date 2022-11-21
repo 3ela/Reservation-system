@@ -7,7 +7,7 @@ const { isDatePassed } = require('../scripts/helpers');
 const PlacesModel = require('./places_model');
 const { RoomModel, HotelModel, checkManyRoomsInHotel } = require('./hotel_room_models');
 const { TransportationModel, checkTransportsAvailablility } = require('./transportation_route_models');
-const { differenceBetweenTwoArrays } = require('../scripts/helpers');
+const { differenceBetweenTwoArrays, formateDate } = require('../scripts/helpers');
 
 const schema = new Schema({
   time: {
@@ -69,17 +69,27 @@ const schema = new Schema({
 
 //! while updating remove some room ids
 //! while updating remove some hotel ids
-//? solved by overwriting the hotel_ids object
+//? solved by overwriting the hotel_ids object and removing the difference
 
 //todo aggregator for capacity by transports
 //todo aggregator for capacity by rooms
 
-schema.pre(['save', 'findOneAndUpdate'], function(next) {
-  let payload = this;
+schema.pre(['save', 'findOneAndUpdate'], async function(next) {
+  var payload = this;
+  var findRes;
+  if(payload._update && payload._update.id) {
+    payload = payload._update
+    findRes = await this.model.findOne(this.getQuery());
+  }
   
+  payload.time.start_date = formateDate(payload.time?.start_date, `DD-MM-YYYY hh:mm A`, "YYYY-MM-DD HH:mm:ss");
+  payload.time.end_date = formateDate(payload.time?.end_date, `DD-MM-YYYY T hh:mm A`, "YYYY-MM-DD");
+  
+  console.log("schema.pre => payload.time.start_date", payload.time.start_date)
+  // console.log("schema.pre => payload", payload)
   //* check for destination change
   if(payload.destination_id) {
-    checkItemExistance(PlacesModel, { _id: payload.destination_id})
+    await checkItemExistance(PlacesModel, { _id: payload.destination_id})
     .then(checkRes => {
       if(checkRes == null) {
         next({
@@ -112,66 +122,72 @@ schema.pre(['save', 'findOneAndUpdate'], function(next) {
     })
   }
   if(payload.transportations_ids && payload.transportations_ids.length > 0) {
-    checkTransportsAvailablility(payload.transportations_ids)
+    await checkTransportsAvailablility(payload.transportations_ids)
       .then(checkRes => {
         console.log("schema.pre transports available => checkRes", checkRes)
       }).catch(checkErr => next(checkErr))
   }
-  next()
-})
 
-schema.post(['save', 'findOneAndUpdate'], async function(doc, next) {
-  const findRes = await this.model.findOne(this.getQuery());
-  const payload = this._update;
-  
-  //* post update changes
+  //* pre update changes
   if(payload.id) {
-    //* check for difference in old transports and new transports
-    let transportsDifference = differenceBetweenTwoArrays(findRes.transportations_ids, payload.transportations_ids);
-    if(transportsDifference.length > 0) {
-      //* if difference exists remove trip_id 
-      await TransportationModel.updateMany(
-        { _id: transportsDifference },
-        { $unset: 'trip_id'},
-        { returnDocument: 'after' }
-        ).then(updateRes => {
-          console.log("schema.post removed trip ides transportation =>", updateRes)
-        }).catch(updateErr => next(updateErr))
-      }
-      
-      //* check for difference in rooms    
-      await payload.hotels_ids.forEach(hotel => {
-        let hotelIndexInSavedData = findRes.findIndex(el => el.id == hotel.id);
-        if(hotelIndexInSavedData != -1 && hotel.rooms_ids && hotel.rooms_ids.length != 0) {
-          let roomsDifference = differenceBetweenTwoArrays(findRes.hotels_ids[hotelIndexInSavedData].rooms_ids, hotel.rooms_ids);
-          //* if difference exists remove trip_id 
-          RoomModel.updateMany(
-            { _id: roomsDifference },
-            { $unset: 'trip_id'},
-            { returnDocument: 'after' }
+    if(payload.transportations_ids) {
+      //* check for difference in old transports and new transports
+      let transportsDifference = differenceBetweenTwoArrays(findRes.transportations_ids, payload.transportations_ids);
+      if(transportsDifference.length > 0) {
+        //* if difference exists remove trip_id 
+        await TransportationModel.updateMany(
+          { _id: transportsDifference },
+          { $unset: 'trip_id'},
+          { returnDocument: 'after' }
           ).then(updateRes => {
-            console.log("schema.post removed trip ids from rooms =>", updateRes)
+            console.log("schema.post removed trip ides transportation =>", updateRes)
           }).catch(updateErr => next(updateErr))
         }
-    })
+    }
+      
+      if(payload.hotels_ids) {
+        //* check for difference in rooms    
+        payload.hotels_ids.forEach(hotel => {
+          let hotelIndexInSavedData = findRes.findIndex(el => el.id == hotel.id);
+          if(hotelIndexInSavedData != -1 && hotel.rooms_ids && hotel.rooms_ids.length != 0) {
+            let roomsDifference = differenceBetweenTwoArrays(findRes.hotels_ids[hotelIndexInSavedData].rooms_ids, hotel.rooms_ids);
+            //* if difference exists remove trip_id 
+            RoomModel.updateMany(
+              { _id: roomsDifference },
+              { $unset: 'trip_id'},
+              { returnDocument: 'after' }
+            ).then(updateRes => {
+              console.log("schema.post removed trip ids from rooms =>", updateRes)
+            }).catch(updateErr => next(updateErr))
+          }
+        })
+      }
   }
+  next();
+})
+
+//* Post Save/update *//
+
+schema.post(['save', 'findOneAndUpdate'], async function(doc, next) {
+  const payload = doc;
+  // console.log("schema.post => payload", payload)
   
-  //* add trip id to added tramsports if exist
-  if(findRes.transportations_ids && findRes.transportations_ids.length > 0) {
+  //* add trip id to added transports if exist
+  if(payload.transportations_ids && payload.transportations_ids.length > 0) {
     await TransportationModel.updateMany(
-      { _id: { $in: findRes.transportations_ids }}, 
-      { trip_id: findRes.id }, 
+      { _id: { $in: payload.transportations_ids }}, 
+      { trip_id: payload.id }, 
       {returnDocument: 'after'})
       .then(updateRes => {
         console.log("added trip ids to transports post save => updateRes", updateRes)
       }).catch(updateErr => next(updateErr))
   }
   //* add trip id to added rooms if exist
-  if(findRes.hotels_ids && findRes.hotels_ids.length > 0) {
-    await findRes.hotel_ids.forEach(hotel => {
+  if(payload.hotels_ids && payload.hotels_ids.length > 0) {
+    await payload.hotel_ids.forEach(hotel => {
       RoomModel.updateMany(
         { _id: { $in: hotel.rooms_ids} }, 
-        { trip_id: findRes.id }, 
+        { trip_id: payload.id }, 
         {returnDocument: 'after'})
         .then(updateRes => {
           console.log("added trip ids to rooms post save => updateRes", updateRes)

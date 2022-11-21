@@ -155,7 +155,7 @@ RoomSchema.pre(['findOneAndUpdate', 'updateOne'], async function(next) {
   //! check if the room number already exists
   //* check if room existss
   const findRes = await this.model.findOne(this.getQuery());
-  console.log("RoomSchema.pre => findRes", findRes)  
+  // console.log("RoomSchema.pre => findRes", findRes)  
   const payload = this._update;
 
   //* cehck if room exist

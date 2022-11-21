@@ -24,7 +24,7 @@ router.post('/', validateUser, authUser, (req, res, next) => {
 
 //? look at schema pre and post hooks
 router.post('/create', validateUser, authUser, itemValids, (req, res, next) => {
-
+  let payload = {...req.body};
   //* data validation
   validateReq(req, res);
 
