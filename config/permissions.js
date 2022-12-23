@@ -7,7 +7,7 @@ const permissionObj = {
   ],
 
   //! make a helper function that can get the permissions form req.userPerms
-  //! and check for othre models functions
+  //! and check for other models functions
   authUser: (req, res, next) => {
     //* connect to the DB
     let neededAuthorization = null;
@@ -22,14 +22,14 @@ const permissionObj = {
         case `/`:
           neededAuthorization = `${pathModel}.list`;
           break;
-          case `/signup`:
-            neededAuthorization = `${pathModel}.create`;
-            break;
-            case `/create`:
-              neededAuthorization = `${pathModel}.create`;
-              break;
-              default: 
-              neededAuthorization = `${pathModel}.list`;
+        case `/signup`:
+          neededAuthorization = `${pathModel}.create`;
+          break;
+        case `/create`:
+          neededAuthorization = `${pathModel}.create`;
+          break;
+        default: 
+          neededAuthorization = `${pathModel}.list`;
       }
     } else if(pathMethod == `PUT`) {
       neededAuthorization = `${pathModel}.update`

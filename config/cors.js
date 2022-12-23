@@ -1,6 +1,6 @@
 
 let whitelist = [
-  'http://localhost:8080'
+  'http://localhost:9000'
 ];
 
 let corsOptions = {

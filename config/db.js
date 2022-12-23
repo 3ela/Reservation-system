@@ -3,6 +3,7 @@ const logger = require('./winston');
 const { currentDate } = require('../scripts/helpers');
 const Mongoose = require('mongoose');
 
+const { differenceBetweenTwoArrays } = require('../scripts/helpers');
 const { HotelModel, RoomModel } = require('../models/hotel_room_models');
 
 let dbConnection = null;
@@ -100,18 +101,21 @@ let DBObj = {
 
   checkManyItemsExistance: (itemModel, itemArray) => {
     return new Promise((resolve, reject) => {
-      DBObj.mongooseInit.then(DBRes => {
+      DBObj.mongooseInit().then(DBRes => {
 
         itemModel.find({ _id: {$in: itemArray}})
           .then(findRes => {
+            
             if(itemArray.length != findRes?.length) {
+              let foundIds = findRes.map(el => el.id);
+              let notFoundArray = differenceBetweenTwoArrays(itemArray, foundIds);
               reject({
                 msg: 'not all items exist',
-                itemArray,
-                findRes
+                errorItems: notFoundArray,
+                foundItems: findRes
               })
             }else {
-              resolve(true)
+              resolve(findRes)
             }
           }).catch(findErr => reject(findErr))
       }).catch(DBErr => reject(DBErr))
@@ -119,11 +123,9 @@ let DBObj = {
   },
 
   checkItemExistance: (itemModel, itemField, selectFields) => {
-    // console.log("itemField", itemField)
-    // console.log("itemModel", itemModel)
     return new Promise((resolve, reject) => {
       DBObj.mongooseInit().then(DBRes => {
-        //* set Item model
+        // set Item model
         // let currentModel = DBObj.getCurrentModel(itemModel);
         
         //* find Item by any field

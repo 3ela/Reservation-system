@@ -13,6 +13,10 @@ const schema = new Schema({
       type: Date,
     },
   },
+  number_of_guests: {
+    type: Number,
+    required: true,
+  },
   reserve_status: {
     type: String,
     enum: ['pending', 'confirmed', 'canceled'],
@@ -25,14 +29,6 @@ const schema = new Schema({
   },
   
   //* forign keys
-  rooms_ids: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Room'
-  }],
-  hotel_id: {
-    type: Schema.Types.ObjectId,
-    ref: 'Hotel'
-  },
   trip_id: {
     type: Schema.Types.ObjectId,
     ref: 'Trip'
@@ -41,10 +37,27 @@ const schema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Payment'
   },
-  transportation_id: {
-    type: Schema.Types.ObjectId,
-    ref: 'Transportation'
-  },
+  hotels_ids: [{
+    id: {
+      type: Schema.Types.ObjectId,
+      ref: 'Hotel'
+    },
+    rooms_ids: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Room'
+    }],
+  }],
+  transportations_ids: [{
+    id: {
+      type: Schema.Types.ObjectId,
+      ref: 'Transportation'
+    },
+    seat_numbers: [
+      {
+        type: String
+      }
+    ]
+  }],
   
   
 },
@@ -55,8 +68,9 @@ const schema = new Schema({
   }
 });
 
-//* check for room && check for availabilit
+//* check for room && check for availabilit & capacity 
 //* check for transportation && check for capacity
+//? make sure the rooms and the transports from the same module as the reservation
 
 //? for each reserve there must be at least a transportaion, 
 //? room or full trip ID.
@@ -107,8 +121,10 @@ schema.pre('save', function(next) {
     //* reserve a full trip
   }else if(
     payload.reserve_module == 'trips' && payload.trip_id
-    && !payload.transportation_id && !payload.hotel_id && !payload.rooms_ids
   ) {
+    //! use guest number to check space in transport and rooms
+    //? if no treansport or rooms then AUTO reserve places for the user
+
     let roomsPromise = checkRoomInHotel('', payload.hotel_id, payload.rooms_ids);
     let transportsPromise = checkForTransportationCapacity(payload.transportation_id);
     
@@ -143,7 +159,6 @@ schema.pre('save', function(next) {
 });
 
 //todo   Make the user reserve into multiple hotels / multiple transportaion and it gets filled auto 
-//? make sure the rooms and the transports from the same module as the reservation
 
 schema.post('save', function(doc, next) {
   //* add reserve_id to all object exists on the created shit
@@ -156,7 +171,7 @@ schema.post('save', function(doc, next) {
           }).catch(roomErr => next(roomErr))
         }).catch(hotelErr => next(hotelErr))
   }else if(doc.reserve_module == 'transports') {
-    TransportationModel.findOneAndUpdate({ _id: doc.hotel_id }, { $push: { reservations_ids: doc.id}})
+    TransportationModel.findOneAndUpdate({ _id: doc.transportations_ids }, { $push: { reservations_ids: doc.id}})
       .then(trasnportRes => {
         next();    
       }).catch(trasnportErr => next(trasnportErr))

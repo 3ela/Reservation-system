@@ -9,12 +9,12 @@ const { currentDate } = require('./scripts/helpers');
 const DBObj = require('./config/db');
 
 
-// app related
+//* app related
 const app = express();
 const port = process.env.PORT;
 
 
-// middlewares
+//* middlewares
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors(corsOptions));
@@ -23,7 +23,7 @@ app.use(express.static('uploads/images'));
 //* DB connection
 app.use(DBObj.mongooseInitMW())
 
-// Routes
+//* Routes
 var UsersRoute = require('./api/users.js');
 var RolesRoute = require('./api/roles.js');
 
@@ -67,8 +67,8 @@ app.use('/routes', RoutesRoute);
 
 //   })
 // })
-// Unknown Route handler
 
+//* Unknown Route handler
 app.get('*', (req, res, next) => {
   res.status(404).json({
     msg: 'Route Not Found'
@@ -76,7 +76,7 @@ app.get('*', (req, res, next) => {
   logger.info(`req ${req.method} @ ${req.originalUrl}`);
 });
 
-// error handler
+//* error handler
 app.use((error, req, res, next) => {
   console.log("app.use => error", error.cause)
   if(error) {
@@ -100,9 +100,9 @@ app.use((error, req, res, next) => {
   }
 })
 
-// Server start
+//* Server start
 app.listen(port, () => {
   var ListenDate = currentDate();
-  console.log(`Listening on port ${port} at ${ListenDate}`)
+  // console.log(`Listening on port ${port} at ${ListenDate}`)
   logger.notice(`Listening on port ${port} at ${ListenDate}`)
 })

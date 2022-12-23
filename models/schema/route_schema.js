@@ -27,7 +27,7 @@ const schema = new Schema({
     required: true
   },
 
-  transportaion_ids: [{
+  transportations_ids: [{
     type: Schema.Types.ObjectId,
     ref: 'Transportation'
   }]

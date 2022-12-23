@@ -14,7 +14,7 @@ router.post('/', validateUser, authUser, (req, res, next) => {
   ItemModel.find({})
     .then(findRes => {
       res.status(200).json({
-        msg: `Transports Found`,
+        msg: `Routes Found`,
         data: findRes
       });
     }).catch(findErr => {
@@ -47,11 +47,11 @@ router.post('/:id', validateUser, authUser, (req, res, next) => {
     .then(findRes => {
       if(findRes == null) {
         res.status(404).json({
-          msg: `Transportaion does not exist`,
+          msg: `Route does not exist`,
         });
       }else {
         res.status(200).json({
-          msg: `Transportaion Found`,
+          msg: `Route Found`,
           data: findRes
         });
       }
@@ -60,7 +60,7 @@ router.post('/:id', validateUser, authUser, (req, res, next) => {
 
 
 
-router.put('/:id', validateUser, authUser, itemValids, (req, res, next) => {
+router.put('/:id/update', validateUser, authUser, itemValids, (req, res, next) => {
   let payload = {
     ...req.body,
     id: req.params.id
@@ -77,41 +77,38 @@ router.put('/:id', validateUser, authUser, itemValids, (req, res, next) => {
     .then(updateRes => {
       if(updateRes == null) {
         res.status(404).json({
-          msg: `Transport does not exist`,
+          msg: `Route does not exist`,
         }); 
       } else {
         res.status(200).json({
-          msg: `Transportation Updated`,
+          msg: `Route Updated`,
           data: updateRes
         });
       }
     }).catch(updateErr => next(updateErr))
-
-});
-
-
+    
+  });
+  
+  
 router.patch('/:id/assign_transport', validateUser, authUser, (req, res, next) => {
   let payload = {
-    route_id: req.params.id,
-    transportation_id: req.body.transportation_id
+    id: req.params.id,
+    transportations_ids: req.body.transportations_ids
   };
-
+  
   //* add transport id to the route 
-  ItemModel.findOneAndUpdate(
+  ItemModel.updateOne(
     { _id: payload.id }, 
-    { $addToSet: { transportaion_ids: payload.transportation_id}}, 
+    payload, 
     { returnDocument: 'after' })
-      .then(updateRes => {
-        //! check if the transport exist
-        //* add that id if not exist in the transport
-        TransportationModel.findOneAndUpdate(
-          { _id: payload.transportation_id }, 
-          { $addToSet: { route_id: payload.id}}, 
-          { returnDocument: 'after' })
-            .then(transportRes => {
-              next()
-            }).catch(transportErr => next(transportErr))
-      }).catch(updateErr => next(updateErr))
+    .then(updateRes => {
+      //! check if the transport exist
+      //* add that id if not exist in the transport
+      res.status(200).json({
+        msg: `Route Updated`,
+        data: updateRes
+      });
+    }).catch(updateErr => next(updateErr))
 });
 
 

@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const { mongooseInit, checkItemExistance } = require('../config/db');
 const { validateUser } = require('../config/jwt');
 const { checkPermissionExistance, authUser } = require('../config/permissions');
 const { 

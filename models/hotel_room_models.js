@@ -89,8 +89,8 @@ HotelSchema.pre('findOneAndUpdate', async function(next) {
     });
 
     await RoomModel.create(createRooms)
-    .then(createRes => {})
-    .catch(createErr => next(createErr));
+      .then(createRes => {})
+      .catch(createErr => next(createErr));
 
     await RoomModel.bulkWrite([...updateRooms])
       .then(updateRes => {
@@ -146,16 +146,15 @@ RoomSchema.pre(['save'], function (next) {
 RoomSchema.post(['save'], function (doc, next) {
   //* update the list of rooms ids inside the hotel 
   HotelModel.findOneAndUpdate({_id: doc.hotel_id }, { $push: { rooms_ids: doc.id}})
-  .then(pushUpdateRes => {
-    next();
-  }).catch(pushUpdateErr => next(pushUpdateErr))
+    .then(pushUpdateRes => {
+      next();
+    }).catch(pushUpdateErr => next(pushUpdateErr))
 })
 
 RoomSchema.pre(['findOneAndUpdate', 'updateOne'], async function(next) {
   //! check if the room number already exists
   //* check if room existss
   const findRes = await this.model.findOne(this.getQuery());
-  // console.log("RoomSchema.pre => findRes", findRes)  
   const payload = this._update;
 
   //* cehck if room exist

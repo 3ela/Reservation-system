@@ -6,7 +6,11 @@ const { checkItemExistance, checkManyItemsExistance } = require('../config/db');
 const { isDatePassed } = require('../scripts/helpers');
 const PlacesModel = require('./places_model');
 const { RoomModel, HotelModel, checkManyRoomsInHotel } = require('./hotel_room_models');
-const { TransportationModel, checkTransportsAvailablility } = require('./transportation_route_models');
+const { 
+  TransportationModel, 
+  checkTransportsAvailablility,
+  checkTransportHasSeatsOpen
+} = require('./transportation_route_models');
 const { differenceBetweenTwoArrays, formateDate } = require('../scripts/helpers');
 
 const schema = new Schema({
@@ -82,11 +86,9 @@ schema.pre(['save', 'findOneAndUpdate'], async function(next) {
     findRes = await this.model.findOne(this.getQuery());
   }
   
-  payload.time.start_date = formateDate(payload.time?.start_date, `DD-MM-YYYY hh:mm A`, "YYYY-MM-DD HH:mm:ss");
-  payload.time.end_date = formateDate(payload.time?.end_date, `DD-MM-YYYY T hh:mm A`, "YYYY-MM-DD");
-  
-  console.log("schema.pre => payload.time.start_date", payload.time.start_date)
-  // console.log("schema.pre => payload", payload)
+  payload.time.start_date = formateDate(payload.time?.start_date, `DD-MM-YYYY hh:mm a`, "YYYY-MM-DD HH:mm:ss");
+  payload.time.end_date = formateDate(payload.time?.end_date, `DD-MM-YYYY hh:mm a`, "YYYY-MM-DD HH:mm:ss");
+
   //* check for destination change
   if(payload.destination_id) {
     await checkItemExistance(PlacesModel, { _id: payload.destination_id})
@@ -113,11 +115,11 @@ schema.pre(['save', 'findOneAndUpdate'], async function(next) {
           console.log("specific rooms .pre => checkRes", checkRes)
         }).catch(checkErr => next(checkErr))
       } else {
-        //* if no ids sent then add ALL 
+        //! if no ids sent then add ALL 
         checkManyRoomsInHotel(hotel.id)
-        .then(checkRes => {
-          console.log("all rooms .pre => checkRes", checkRes)
-        }).catch(checkErr => next(checkErr))
+          .then(checkRes => {
+            console.log("all rooms .pre => checkRes", checkRes)
+          }).catch(checkErr => next(checkErr))
       }
     })
   }
@@ -132,7 +134,7 @@ schema.pre(['save', 'findOneAndUpdate'], async function(next) {
   if(payload.id) {
     if(payload.transportations_ids) {
       //* check for difference in old transports and new transports
-      let transportsDifference = differenceBetweenTwoArrays(findRes.transportations_ids, payload.transportations_ids);
+      let transportsDifference = differenceBetweenTwoArrays(findRes?.transportations_ids, payload.transportations_ids);
       if(transportsDifference.length > 0) {
         //* if difference exists remove trip_id 
         await TransportationModel.updateMany(
@@ -184,7 +186,7 @@ schema.post(['save', 'findOneAndUpdate'], async function(doc, next) {
   }
   //* add trip id to added rooms if exist
   if(payload.hotels_ids && payload.hotels_ids.length > 0) {
-    await payload.hotel_ids.forEach(hotel => {
+    await payload.hotels_ids.forEach(hotel => {
       RoomModel.updateMany(
         { _id: { $in: hotel.rooms_ids} }, 
         { trip_id: payload.id }, 
@@ -197,4 +199,57 @@ schema.post(['save', 'findOneAndUpdate'], async function(doc, next) {
     next()
   })
 
-module.exports = mongoose.model('Trip', schema)
+//* ----- *//
+//* check for trip existance and limit
+function checkTripExistAndLimit(trip_id, transports_ids, hotels_ids, number_of_guests) {
+  return new Promise((resolve, reject) => {
+  
+    //* check for the trip ID
+    tripModel.findById(trip_id)
+      .then(findRes => {
+        if(findRes != null) {
+          //* counters
+          let isSeatEqualGuest = 0;
+          let isRoomsEqualGuest = 0;
+
+          transports_ids.forEach(transport => {
+            let isTransportOnTrip = findRes.transportations_ids.findIndex(el => el == transport); 
+            if(isTransportOnTrip != -1) {
+              checkTransportHasSeatsOpen(transport.id, transport.seat_numbers)
+                .then(checkRes => { 
+                  isSeatEqualGuest = isSeatEqualGuest + transport.seat_numbers;
+                }).catch(checkErr => reject(checkErr))
+            }
+          })
+          //* check if number of seats eq guests
+          if(isSeatEqualGuest < number_of_guests) {
+            reject({
+              msg: ' Seats are not enough for the guests ',
+              number_of_seats: isSeatEqualGuest,
+              number_of_guests
+            })
+          }  
+
+          hotels_ids.forEach(hotel => {
+            let isHotelOnTrip = findRes.hotels_ids.findIndex(el => el.id == hotel.id); 
+            let diffInRooms = differenceBetweenTwoArrays(hotel.rooms_ids, findRes.hotels_ids.rooms_ids) 
+            if(isHotelOnTrip =! -1 && hotel.rooms_ids.length == diffInRooms.length) {
+              //* aggregate teh rooms number
+              
+            }
+          })
+        } else {
+          reject({
+            msg: `This Trip doesnt exist`,
+            trip_id
+          })
+        }   
+      }).catch(findErr => reject(findErr)) 
+  })
+}
+  
+
+
+const tripModel =  mongoose.model('Trip', schema);
+
+module.exports = tripModel;

@@ -55,17 +55,19 @@ router.post('/:id', validateUser, authUser, (req, res, next) => {
 });
 
 
-
 router.put('/:id/update', validateUser, authUser, itemValids, (req, res, next) => {
   let payload = {
     ...req.body,
     id: req.params.id
   };
-
+  let options = {
+    returnDocument: 'after', 
+    runValidators: true
+  };
   //* validate data
   validateReq(req, res);
 
-  ItemModel.findOneAndUpdate({ _id: payload.id }, payload, { returnDocument: 'after'})
+  ItemModel.findOneAndUpdate({ _id: payload.id }, payload, options)
     .then(updateRes => {
       if(updateRes == null) {
         res.status(404).json({

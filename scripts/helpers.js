@@ -37,13 +37,14 @@ helpersObj = {
       //* nothing exists in the second array to compare with the first
       return firstArray;
     } else {
-      let firstIntoSet = new Set(firstArray);
+      let secondIntoSet = new Set(secondArray);
       let result = [];
-      secondArray.forEach(el => {
-        if(!firstIntoSet.has(el)) {
+      firstArray.forEach(el => {
+        if(!secondIntoSet.has(el)) {
           result.push(el)
         } 
       })
+      // console.log("differenceBetweenTwoArrays => result", result)
       return result;
     }
   }

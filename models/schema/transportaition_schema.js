@@ -47,13 +47,17 @@ const schema = new Schema({
     type: Schema.Types.ObjectId, 
     ref: 'Route'
   },
-  reservations_list: [{
-    licence_id: {
+  trip_id: {
+    type: Schema.Types.ObjectId, 
+    ref: 'Trip'
+  },
+  reservations_ids: [{
+    id: {
       type: Schema.Types.ObjectId, 
       ref: 'Reservation'
     },
     seat_number: {
-      type: Number
+      type: String,
     }
   }],
   driver: {
@@ -69,7 +73,7 @@ const schema = new Schema({
       type: String,
       required: true
     },
-  }
+  },
 
 },
 { 
@@ -78,6 +82,15 @@ const schema = new Schema({
     updatedAt: 'updated_at'
   }
 });
+
+schema.virtual('reserved_seats')
+  .get(function() {
+    let reserved_seats = [];
+    this.reservations_ids.forEach(reserve => {
+      reserved_seats.push(reserve.seat_number)
+    });
+    return reserved_seats;
+  })
 
 //? transportation_route_models
 

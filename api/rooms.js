@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const { mongooseInit, checkItemExistance, checkRoomExistanceInHotel } = require('../config/db');
 const { validateUser } = require('../config/jwt');
 const { 
   validateReq, 

@@ -58,7 +58,6 @@ schema.pre('save', function(next) {
   //* update hook check if current_id and parent_id exist 
   schema.pre('findOneAndUpdate', async function(next) {
     const findRes = await this.model.findOne(this.getQuery());
-    console.log("schema.pre => findRes", findRes)
     const payload = this._update;
     
     if(findRes != null) {
