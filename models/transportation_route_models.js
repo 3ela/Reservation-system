@@ -42,19 +42,21 @@ TransportSchema.pre(['save', 'findOneAndUpdate'], async function(next) {
         }
       }).catch(checkErr => next(checkErr))
   }
-  await checkItemExistance(UserModel, { _id: payload.driver.user_id })
-    .then(checkRes => {
-      if(checkRes == null) {
-        next({
-          msg: "User doesnt exist",
-          driver: {
-            user_id:payload.driver.user_id
-          }
-        })
-      }else {
-        next();
-      }
-    }).catch(checkErr => next(checkErr))
+  if(payload.driver) {
+    await checkItemExistance(UserModel, { _id: payload.driver?.user_id })
+      .then(checkRes => {
+        if(checkRes == null) {
+          next({
+            msg: "User doesnt exist",
+            driver: {
+              user_id:payload.driver?.user_id
+            }
+          })
+        }else {
+          next();
+        }
+      }).catch(checkErr => next(checkErr))
+  }
 })
 
 TransportSchema.pre('updateOne', async function(next) {
@@ -69,7 +71,6 @@ TransportSchema.pre('updateOne', async function(next) {
       { $pull: { transportations_ids: findRes.id }},
       { returnDocument: 'after'}
     ).then(updateRes  => {
-      console.log("TransportSchema.pre => updateRes", updateRes)
       next();
     }).catch(updateErr => next(updateErr))
   } else {
@@ -107,7 +108,6 @@ TransportSchema.post(['save', 'findOneAndUpdate', 'updateOne'], async function(d
       { $push: { transportations_ids: payload.id }},
       { returnDocument: 'after'}
     ).then(updateRes => {
-      console.log("TransportSchema.post => updateRes", updateRes)
       next();
     })
     .catch(updateErr => next(updateErr))
@@ -287,16 +287,18 @@ function checkTransportsAvailablility(transports_ids) {
 function checkTransportHasSeatsOpen(transport_id, seat_numbers) {
   return new Promise((resolve, reject) => {
     TransportationModel.findById(transport_id)
-      .then(findRes => {  
-        if(findRes != null) {
-          try {
+    .then(findRes => {  
+      if(findRes != null) {
+        try {
+            console.log('transport', seat_numbers, findRes.reserved_seats)
             let seatsInReservationOfTransport = differenceBetweenTwoArrays(seat_numbers, findRes.reserved_seats);
             if(seatsInReservationOfTransport.length == seat_numbers.length) {
               resolve(findRes);
             } else {
               reject({
                 msg: ` Not all seats are open `,
-                seat_numbers
+                seat_numbers,
+                seatsInReservationOfTransport
               })
             }
           } catch (error) {
@@ -316,6 +318,17 @@ function checkTransportHasSeatsOpen(transport_id, seat_numbers) {
   })
 }
 
+function checkAllTransportsHasSeatsOpen(transports_ids) {
+  return new Promise((resolve, reject) => {
+    //* loop for all transports to check if all seats are empty
+    let transportsPromises = transports_ids.map(transport => checkTransportHasSeatsOpen(transport.id, transport.seats_numbers));
+
+    Promise.all(transportsPromises)
+      .then(transportsRes => {
+        resolve(transportsRes)
+      }).catch(transportErr => reject(transportErr))
+  })
+}
 
 //* models for this file
 let RouteModel = mongoose.model('Route', RouteSchema);
@@ -327,6 +340,7 @@ module.exports = {
   RouteModel,
   checkForTransportationCapacity,
   checkTransportsAvailablility,
-  checkTransportHasSeatsOpen
+  checkTransportHasSeatsOpen,
+  checkAllTransportsHasSeatsOpen
 }
 

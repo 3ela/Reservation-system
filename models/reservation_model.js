@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
-const { HotelModel, RoomModel, checkRoomInHotel } = require('./hotel_room_models');
-const { TransportationModel, checkForTransportationCapacity } = require('./transportation_route_models');
+const { HotelModel, RoomModel, checkRoomInHotel, checkAllHotelsRooms } = require('./hotel_room_models');
+const { TransportationModel, checkForTransportationCapacity, checkAllTransportsHasSeatsOpen } = require('./transportation_route_models');
 
 const schema = new Schema({
   period: {
@@ -52,7 +52,7 @@ const schema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Transportation'
     },
-    seat_numbers: [
+    seats_numbers: [
       {
         type: String
       }
@@ -80,70 +80,67 @@ schema.pre('save', function(next) {
 
   //* reserve rooms only
   if(
-      payload.reserve_module == 'rooms' && payload.hotel_id && payload.rooms_ids
-      && !payload.transportation_id && !payload.trip_id  
+      payload.reserve_module == 'rooms' && payload.hotels_ids 
+      && !payload.trip_id && (payload.transportations_ids?.length == 0 || !payload.transportations_ids)
     ) {
-    //* check for hotel and rooms exist on it
-    checkRoomInHotel('', payload.hotel_id, payload.rooms_ids)
-    .then(checkRes => {
-      if(checkRes == null) {
-        next({
-          msg: ` Some of the Rooms Ids Are Not found on the Hotel `,
-          err: findRes
-        })
-      }else {
-        //* all rooms exist on the hotel
-        //! check for rooms availability before reservation
-        console.log("schema.pre => checkRes", checkRes)
-        checkRes.rooms_ids.forEach(room => {
-          if(room.reserve_status == true) {
-            next({
-              msg: `Room already reserved`,
-              room_id: room.id
-            })
-          }
-        })
-        next();
-      }
-    })
-
-    //* reserve OneDay trip only
-  }else if(
-      payload.reserve_module == 'transports' && payload.transportation_id 
-      && !payload.trip_id && !payload.hotel_id && !payload.rooms_ids
-    ) {
-
-    checkForTransportationCapacity(payload.transportation_id) 
+      
+      //* check for all hotel and rooms exist on it
+      checkAllHotelsRooms(payload.hotels_ids)
       .then(checkRes => {
+        if(checkRes == null) {
+          next({
+            msg: ` Some of the Rooms Ids Are Not found on the Hotel `,
+            err: findRes
+          })
+        } else {
+          //* all rooms exist on the hotel
+          next();
+        }
+      }).catch(checkErr => next(checkErr))
+      
+    }else if(
+    //* reserve OneDay trip only
+      payload.reserve_module == 'transports' && payload.transportations_ids 
+      && !payload.trip_id && (!payload.hotels_ids || payload.hotels_ids?.length == 0)
+    ) {
+      checkAllTransportsHasSeatsOpen(payload.transportations_ids) 
+      .then(checkRes => {
+        //* all seats are open
         next();
       }).catch(checkErr => next(checkErr))
 
+    }else if(
     //* reserve a full trip
-  }else if(
-    payload.reserve_module == 'trips' && payload.trip_id
-  ) {
+          
+      payload.reserve_module == 'trips' && payload.trip_id
+    ) {
+
+    // todo check for capacity on trip
+    // todo check for capacity on rooms
+    // todo check for capacity on transportations
+    // ? trip doenst need a period
     //! use guest number to check space in transport and rooms
     //? if no treansport or rooms then AUTO reserve places for the user
 
-    let roomsPromise = checkRoomInHotel('', payload.hotel_id, payload.rooms_ids);
-    let transportsPromise = checkForTransportationCapacity(payload.transportation_id);
+    let roomsPromise = checkAllHotelsRooms(payload.hotels_ids, payload.number_of_guests);
+    let transportsPromise = checkAllTransportsHasSeatsOpen(payload.transportations_ids, payload.number_of_guests);
+    // let tripPromise = 
     
     Promise.all([roomsPromise, transportsPromise])
       .then(values => {
-        console.log("schema.pre => values", values)
       }).catch(valErr => next(valErr))
   }else {
-    if(payload.reserve_module == 'rooms' && !(payload.hotel_id || !payload.rooms_ids)) {
+    if(payload.reserve_module == 'rooms' && !(payload.hotels_ids)) {
       next({
         msg: `Reservation needs data Hotel/Rooms IDs on Rooms Module`,
         data: payload
       })
-    } else if(payload.reserve_module == 'transports' && !payload.transportation_id ) {
+    } else if(payload.reserve_module == 'transports' && !payload.transportations_ids ) {
       next({
         msg: `Reservation needs data Transportation ID on Transports Module`,
         data: payload
       })
-    }else if(payload.reserve_module == 'trips' && !payload.transportation_id || !payload.rooms_ids || !payload.hotel_id) { 
+    }else if(payload.reserve_module == 'trips' && !payload.transportations_ids || !payload.rooms_ids || !payload.hotels_ids) { 
       next({
         msg: `Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module`,
         data: payload
@@ -163,23 +160,61 @@ schema.pre('save', function(next) {
 schema.post('save', function(doc, next) {
   //* add reserve_id to all object exists on the created shit
   if(doc.reserve_module == 'rooms') {
-    HotelModel.findOneAndUpdate({ _id: doc.hotel_id}, { $push: { reservations_ids: doc.id}})
-      .then(hotelRes => {
-        RoomModel.updateMany({ _id: { $in: [...doc.rooms_ids]}}, { $push: { reservation_id: doc.id, reserve_status: true } })
-          .then(roomRes => {
-            next()
-          }).catch(roomErr => next(roomErr))
-        }).catch(hotelErr => next(hotelErr))
+    //* create two promise loops for each hotel and each room inside each hotel
+    let hotelPromise = doc.hotels_ids.map(hotel => hotelSavePromise(hotel, doc))
+
+    Promise.all(hotelPromise).then(hotelPromisesRes => {
+      next()
+    }).catch(hotelPromisesErr => next(hotelPromisesErr))
+
   }else if(doc.reserve_module == 'transports') {
-    TransportationModel.findOneAndUpdate({ _id: doc.transportations_ids }, { $push: { reservations_ids: doc.id}})
+    let transportsPromises = doc.transportations_ids.map(transport => {
+      return TransportationModel.findOneAndUpdate(
+        { _id: transport.id }, 
+        { $push: { reservations_ids: { id: doc.id, seats_numbers: transport.seats_numbers}} }
+      )
       .then(trasnportRes => {
-        next();    
       }).catch(trasnportErr => next(trasnportErr))
+    })
+
+    //* run all promises
+    Promise.all(transportsPromises)
+      .then(transportsRes => next())
+      .catch(transportsErr => next(transportsErr))
   }else if(doc.reserve_module == 'trips') {
     
   }
 });
 
+
+//? hotel Promise for save
+function hotelSavePromise(hotel, doc) {
+  return new Promise((resolve, reject) => {
+    HotelModel.findOneAndUpdate({ _id: hotel.id}, { $push: { reservations_ids: doc.id}})
+    .then(hotelRes => {  
+      //* create reservation on each room
+      let roomsPromises = hotel.rooms_ids.map(room => roomSavePromise(room, doc.id));
+      
+      Promise.all(roomsPromises).then(roomPromisesRes => {
+        resolve(roomPromisesRes);
+      }).catch(roomPromisesErr => reject(roomPromisesErr))
+    }).catch(hotelErr => reject(hotelErr))
+  })
+ 
+}
+
+//? room Promise for save
+function roomSavePromise(room, doc_id) {
+  return new Promise((resolve, reject) => {
+    RoomModel.updateMany(
+        { _id: room }, 
+        { $push: { reservation_id: doc_id }, reserve_status: true }
+      )
+      .then(roomRes => {
+        resolve(roomRes);
+      }).catch(roomErr => reject(roomErr))
+  })
+}
 //todo update hooks add more to the reservation ids inside all other models
 //todo set time limit for payment to reach other thatn that suspend reservation
 //todo suspend remove reservation ids from all other models and hold the reservation untill certain date waiting for payment

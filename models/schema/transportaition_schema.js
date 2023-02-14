@@ -56,8 +56,8 @@ const schema = new Schema({
       type: Schema.Types.ObjectId, 
       ref: 'Reservation'
     },
-    seat_number: {
-      type: String,
+    seats_numbers: {
+      type: [String],
     }
   }],
   driver: {
@@ -87,7 +87,8 @@ schema.virtual('reserved_seats')
   .get(function() {
     let reserved_seats = [];
     this.reservations_ids.forEach(reserve => {
-      reserved_seats.push(reserve.seat_number)
+      reserved_seats = reserved_seats.concat(reserve.seats_numbers)
+      // console.log('reserve', reserve.seats_numbers)
     });
     return reserved_seats;
   })

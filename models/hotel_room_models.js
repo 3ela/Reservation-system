@@ -295,18 +295,16 @@ function checkRoomInHotel(room_number, hotel_id, room_id) {
   
 };
 
-function checkManyRoomsInHotel(hotel_id, rooms_ids) {
+function checkManyRoomsInHotel(hotel_id, rooms_ids, matchOpts) {
   return new Promise((resolve, reject) => {
     //* check for hotel existance
-    let match = {
-      reserve_module: 'trips',
-      trip_id: { $exists: false }
-    };
-    rooms_ids ? match.id = { $in: rooms_ids } : ''
+    let match = {};
+    rooms_ids ? match._id = { $in: rooms_ids } : '';
+    matchOpts ? match = {...match, ...matchOpts} : '';
 
     HotelModel.findById(hotel_id)
     .populate({
-      path: 'rooms_id',
+      path: 'rooms_ids',
       match
     }).exec((findErr, findRes) => {
       if(findRes == null) {
@@ -329,6 +327,52 @@ function checkManyRoomsInHotel(hotel_id, rooms_ids) {
   })
 }
 
+
+
+function checkAllHotelsRooms(hotels_ids, check_total_capacity) {
+  return new Promise((resolve, reject) => {
+    let hotelsPromises = [];
+    hotels_ids.forEach(hotel => {
+      hotelsPromises.push(checkManyRoomsInHotel(hotel.id, hotel.rooms_ids, {
+        reserve_status: false,
+        reserve_module: 'rooms',
+      }));  
+    });
+    Promise.all(hotelsPromises).then(values => {
+      
+      //* check for guest_capacity in rooms
+      if(check_total_capacity) {
+
+        //* calculate guest_capacity in rooms
+        let total_guest_capacity = 0;
+        values.forEach(hotel => {
+          hotel.rooms_ids.reduce((total_guest_capacity, curr) => total_guest_capacity + curr);
+        })
+
+        if(total_guest_capacity >= check_total_capacity) {
+          //* guest_capacity in rooms enough
+          resolve({
+            capacity_check: true,
+            total_guest_capacity,
+            values
+          })
+        } else if(total_guest_capacity < check_total_capacity) {
+          //* guest_capacity in rooms not enough
+          reject({
+            msg: " Capacity Check Failed, need more guest capacity ",
+            capacity_check: false,
+            total_guest_capacity,
+            values
+          })
+        }
+      } else {
+        //* no check for capacity
+        resolve(values)
+      }
+    }).catch(err => reject(err))
+  })
+}
+
 let HotelModel = mongoose.model('Hotel', HotelSchema);
 let RoomModel = mongoose.model('Room', RoomSchema);
 
@@ -336,5 +380,6 @@ module.exports = {
   HotelModel,
   RoomModel,
   checkRoomInHotel,
-  checkManyRoomsInHotel
+  checkManyRoomsInHotel,
+  checkAllHotelsRooms
 }

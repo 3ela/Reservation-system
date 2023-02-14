@@ -2999,3 +2999,351 @@
 {"level":"notice","message":"Listening on port 8000 at Tue Dec 13 2022 06:52:00 GMT+0200 (Eastern European Standard Time)"}
 {"level":"notice","message":"Listening on port 8000 at Tue Dec 13 2022 06:54:22 GMT+0200 (Eastern European Standard Time)"}
 {"level":"notice","message":"Listening on port 8000 at Wed Dec 14 2022 02:21:21 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 20:35:57 GMT+0200 (Eastern European Standard Time)"}
+{"_message":"Reservation validation failed","errors":{"number_of_guests":{"kind":"required","message":"Path `number_of_guests` is required.","name":"ValidatorError","path":"number_of_guests","properties":{"message":"Path `number_of_guests` is required.","path":"number_of_guests","type":"required"}}},"level":"error","message":"Error : Reservation validation failed: number_of_guests: Path `number_of_guests` is required.","stack":"ValidationError: Reservation validation failed: number_of_guests: Path `number_of_guests` is required.\n    at model.Document.invalidate (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\document.js:3055:32)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\document.js:2843:17\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\schematype.js:1349:9\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"data":{"_id":"63ea8526ee66640fc2251017","created_at":"2023-02-13T18:44:54.398Z","hotels_ids":[],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T18:44:54.398Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"data":{"_id":"63ea8993ee66640fc225101c","created_at":"2023-02-13T19:03:47.898Z","hotels_ids":[],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T19:03:47.898Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"data":{"_id":"63ea89a0ee66640fc225101f","created_at":"2023-02-13T19:04:00.612Z","hotels_ids":[{"_id":"63ea89a0ee66640fc2251020","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T19:04:00.612Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:04:47 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea89d3e725bc46fcf2817c","created_at":"2023-02-13T19:04:51.382Z","hotels_ids":[{"_id":"63ea89d3e725bc46fcf2817d","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T19:04:51.382Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:05:14 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea89ec228f0a08deb2b024","created_at":"2023-02-13T19:05:16.123Z","hotels_ids":[{"_id":"63ea89ec228f0a08deb2b025","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T19:05:16.123Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:05:31 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:05:34 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:06:05 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:06:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:06:21 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:06:26 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:06:31 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:07:04 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:07:18 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:07:27 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:07:53 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea8a93a9954de4c4621197","created_at":"2023-02-13T19:08:03.355Z","hotels_ids":[{"_id":"63ea8a93a9954de4c4621198","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T19:08:03.355Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:08:39 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:08:46 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea8ac963604837d74886ca","created_at":"2023-02-13T19:08:57.357Z","hotels_ids":[{"_id":"63ea8ac963604837d74886cb","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T19:08:57.357Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:10:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:10:16 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea8b1a2f6f6174026cba34","created_at":"2023-02-13T19:10:18.771Z","hotels_ids":[{"_id":"63ea8b1a2f6f6174026cba35","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T19:10:18.771Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:11:16 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea8b56ea6071ff2b234345","created_at":"2023-02-13T19:11:18.303Z","hotels_ids":[{"_id":"63ea8b56ea6071ff2b234346","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T19:11:18.303Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:11:55 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:12:42 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:13:06 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:13:21 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:13:25 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:13:26 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:13:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:13:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:16:37 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:16:39 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:26:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 21:27:39 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:06:00 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:06:09 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:06:10 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:06:50 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:06:53 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:08:13 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:08:16 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:09:21 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea98f75a0f0cb2cf4fbee6","created_at":"2023-02-13T20:09:27.425Z","hotels_ids":[{"_id":"63ea98f75a0f0cb2cf4fbee7","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T20:09:27.425Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:11:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:12:10 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:12:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:12:31 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea99b21ab49c07166035fc","created_at":"2023-02-13T20:12:34.818Z","hotels_ids":[{"_id":"63ea99b21ab49c07166035fd","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T20:12:34.818Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:15:50 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:16:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:16:51 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea9ab6806158498959fa84","created_at":"2023-02-13T20:16:54.156Z","hotels_ids":[{"_id":"63ea9ab6806158498959fa85","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T20:16:54.156Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:17:24 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea9ad7a572b7d09394ac6a","created_at":"2023-02-13T20:17:27.581Z","hotels_ids":[{"_id":"63ea9ad7a572b7d09394ac6b","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T20:17:27.581Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:17:38 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea9ae546a2243665791f68","created_at":"2023-02-13T20:17:41.348Z","hotels_ids":[{"_id":"63ea9ae546a2243665791f69","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T20:17:41.348Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:17:51 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea9af25bd6a3eb0ee95373","created_at":"2023-02-13T20:17:55.006Z","hotels_ids":[{"_id":"63ea9af35bd6a3eb0ee95374","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T20:17:55.006Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:18:10 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63ea9b05db5a924c6e4c2e26","created_at":"2023-02-13T20:18:13.077Z","hotels_ids":[{"_id":"63ea9b05db5a924c6e4c2e27","id":"634d077ae82f1a065c901574","rooms_ids":["634d077ae82f1a065c901577"]}],"number_of_guests":4,"period":{"end_date":"2022-10-22T22:00:00.000Z","start_date":"2022-10-21T22:00:00.000Z"},"reserve_module":"rooms","reserve_status":"pending","transportations_ids":[],"updated_at":"2023-02-13T20:18:13.077Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:18:25 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:18:38 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:18:40 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:19:11 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:20:09 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:20:38 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:21:58 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:22:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:23:59 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:24:07 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Validation Err","stack":"Error: Validation Err\n    at validateReq (C:\\Code\\GDS\\server\\scripts\\validators.js:13:27)\n    at C:\\Code\\GDS\\server\\api\\hotels.js:81:3\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at middleware (C:\\Code\\GDS\\server\\node_modules\\express-validator\\src\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"body":"{\n    \"name\": \"5 stars\",\n    \"address\": \"alex downtown\",\n    \"city\": \"alex\",\n\t\t\"reserve_module\": \"rooms\",\n\n}","expose":true,"level":"error","message":"Error : Unexpected token } in JSON at position 107","stack":"SyntaxError: Unexpected token } in JSON at position 107\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Code\\GDS\\server\\node_modules\\body-parser\\lib\\types\\json.js:89:19)\n    at C:\\Code\\GDS\\server\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:201:9)\n    at invokeCallback (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:231:16)\n    at done (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:220:7)\n    at IncomingMessage.onEnd (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:280:7)\n    at IncomingMessage.emit (node:events:538:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":400,"statusCode":400,"type":"entity.parse.failed"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:29:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:29:58 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:30:20 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:30:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:30:31 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:35:12 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:35:29 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:36:06 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:37:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:37:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:37:54 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:38:26 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:38:49 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:39:02 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:39:24 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:40:32 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:41:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:42:06 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:42:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:42:50 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:43:03 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:43:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:43:35 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:43:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:44:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:44:37 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:45:02 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:56:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:56:12 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:56:16 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:58:31 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:58:37 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 22:59:49 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:02:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:32:04 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:32:12 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:32:21 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:32:30 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:32:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:32:45 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:33:18 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:33:31 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:37:50 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:38:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:38:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:38:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:39:10 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:39:12 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:40:32 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:40:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:41:52 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:42:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:43:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:43:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:43:29 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:43:59 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:44:02 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:44:11 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:44:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:46:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:47:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:48:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:49:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:51:06 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:51:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:51:24 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:51:39 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:51:42 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:51:45 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:52:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:52:32 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:52:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:52:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:53:32 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:53:52 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:54:05 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:54:20 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:54:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:55:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:55:12 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:55:20 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:55:24 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:55:35 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:55:42 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:56:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:57:49 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:58:06 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:58:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:58:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:59:03 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:59:13 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:59:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:59:34 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Mon Feb 13 2023 23:59:45 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:01:30 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:01:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:07:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:07:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:08:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:10:11 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:10:18 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:10:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:10:50 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:12:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:13:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:13:41 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:14:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:15:03 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:15:34 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:15:52 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:17:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:17:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:18:02 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:18:27 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:20:07 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:21:10 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:21:21 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:21:34 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:22:15 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:22:21 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:22:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:22:27 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:22:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:25:11 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:26:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:26:47 GMT+0200 (Eastern European Standard Time)"}
+{"hotel_id":"634d077ae82f1a065c901574","level":"error","message":"Error :","msg":" hotel was not found "}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:28:21 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:28:29 GMT+0200 (Eastern European Standard Time)"}
+{"hotel_id":"634d077ae82f1a065c901574","level":"error","message":"Error :","msg":" hotel was not found "}
+{"hotel_id":"634d077ae82f1a065c901574","level":"error","message":"Error :","msg":" hotel was not found "}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:28:52 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : doc.rooms_ids is not iterable","stack":"TypeError: doc.rooms_ids is not iterable\n    at C:\\Code\\GDS\\server\\models\\reservation_model.js:159:52\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:30:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:35:57 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:36:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:36:59 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:37:03 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:37:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:38:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:39:11 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:39:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:39:30 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:39:37 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:41:25 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Pormise is not defined","stack":"ReferenceError: Pormise is not defined\n    at hotelSavePromise (C:\\Code\\GDS\\server\\models\\reservation_model.js:178:3)\n    at C:\\Code\\GDS\\server\\models\\reservation_model.js:159:56\n    at Proxy.forEach (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:159:39)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:233:9)\n    at Kareem.execPost (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:266:3)\n    at _cb (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:367:15)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:442:5\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:311:7"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:41:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : undefined is not iterable (cannot read property Symbol(Symbol.iterator))","stack":"TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Function.all (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:161:13)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:233:9)\n    at Kareem.execPost (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:266:3)\n    at _cb (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:367:15)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:442:5\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:311:7\n    at collectionOperationCallback (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:172:24)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\utils.js:371:9"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:42:37 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:42:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : undefined is not iterable (cannot read property Symbol(Symbol.iterator))","stack":"TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Function.all (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:161:13)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:233:9)\n    at Kareem.execPost (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:266:3)\n    at _cb (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:367:15)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:442:5\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:311:7\n    at collectionOperationCallback (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:172:24)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\utils.js:371:9"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:44:29 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : undefined is not iterable (cannot read property Symbol(Symbol.iterator))","stack":"TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Function.all (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:161:13)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:233:9)\n    at Kareem.execPost (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:266:3)\n    at _cb (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:367:15)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:442:5\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:311:7\n    at collectionOperationCallback (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:172:24)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\utils.js:371:9"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:45:29 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : undefined is not iterable (cannot read property Symbol(Symbol.iterator))","stack":"TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Function.all (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:161:13)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:233:9)\n    at Kareem.execPost (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:266:3)\n    at _cb (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:367:15)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:442:5\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:311:7\n    at collectionOperationCallback (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:172:24)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\utils.js:371:9"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:46:47 GMT+0200 (Eastern European Standard Time)"}
+{"code":2,"index":0,"level":"error","message":"Error : The field 'reserve_status' must be an array but is of type bool in document {_id: ObjectId('634d077ae82f1a065c901577')}","stack":"MongoServerError: The field 'reserve_status' must be an array but is of type bool in document {_id: ObjectId('634d077ae82f1a065c901577')}\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\operations\\update.js:115:33\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\cmap\\connection_pool.js:299:25\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\sdam\\server.js:212:17\n    at handleOperationResult (C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\sdam\\server.js:284:20)\n    at Connection.onMessage (C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\cmap\\connection.js:219:9)\n    at MessageStream.<anonymous> (C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\cmap\\connection.js:60:60)\n    at MessageStream.emit (node:events:526:28)\n    at processIncomingData (C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:132:20)\n    at MessageStream._write (C:\\Code\\GDS\\server\\node_modules\\mongoose\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:389:12)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:49:07 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:49:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:49:16 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:50:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:50:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:51:05 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:51:18 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 00:57:49 GMT+0200 (Eastern European Standard Time)"}
+{"_message":"Validation failed","errors":{"reserve_module":{"kind":"enum","message":"`rooms` is not a valid enum value for path `reserve_module`.","name":"ValidatorError","path":"reserve_module","properties":{"enumValues":["trips","transports"],"message":"`rooms` is not a valid enum value for path `reserve_module`.","path":"reserve_module","type":"enum","value":"rooms"},"value":"rooms"}},"level":"error","message":"Error : Validation failed: reserve_module: `rooms` is not a valid enum value for path `reserve_module`.","stack":"ValidationError: Validation failed: reserve_module: `rooms` is not a valid enum value for path `reserve_module`.\n    at _done (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\helpers\\updateValidators.js:228:19)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\helpers\\updateValidators.js:204:11\n    at schemaPath.doValidate.updateValidator (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\helpers\\updateValidators.js:162:13)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\schematype.js:1341:11\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","message":"Error : Cannot set properties of undefined (setting 'take_off_time')","stack":"TypeError: Cannot set properties of undefined (setting 'take_off_time')\n    at model.Query.<anonymous> (C:\\Code\\GDS\\server\\models\\transportation_route_models.js:132:30)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.Query.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 01:06:07 GMT+0200 (Eastern European Standard Time)"}
+{"data":{},"level":"error","message":"Error :","msg":"Departure and destination cant be the same"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 01:10:09 GMT+0200 (Eastern European Standard Time)"}
+{"data":[],"level":"error","message":"Error :","msg":" Not all transports are available "}
+{"body":"{\n    \"reserve_module\": \"transports\",\n\t\t\"number_of_guests\": \"4\",\n    \"transportations_ids\": [\n\t\t\t{\n\t\t\t\t\"id\": \"6373b6ee6887493d3d309426\",\n\t\t\t\t\"seats_numbers\": [\"14A\", \"14B\", \"14C\", \"14D\"]\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"id\": \"637d0488989c50904d268bb0\",\n\t\t\t\t\"seats_numbers\": [\"1A\", \"1B\", \"2A\", \"2B\"]\n\t\t\t},\n\t\t]\n\n}","expose":true,"level":"error","message":"Error : Unexpected token ] in JSON at position 290","stack":"SyntaxError: Unexpected token ] in JSON at position 290\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Code\\GDS\\server\\node_modules\\body-parser\\lib\\types\\json.js:89:19)\n    at C:\\Code\\GDS\\server\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:201:9)\n    at invokeCallback (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:231:16)\n    at done (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:220:7)\n    at IncomingMessage.onEnd (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:280:7)\n    at IncomingMessage.emit (node:events:538:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":400,"statusCode":400,"type":"entity.parse.failed"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'start_date')","stack":"TypeError: Cannot read properties of undefined (reading 'start_date')\n    at C:\\Code\\GDS\\server\\api\\reservations.js:30:20\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Code\\GDS\\server\\config\\permissions.js:66:13\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 01:34:39 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63eac913045674b9b005f2d4","created_at":"2023-02-13T23:34:43.094Z","hotels_ids":[],"number_of_guests":4,"reserve_module":"transports","reserve_status":"pending","transportations_ids":[{"_id":"63eac913045674b9b005f2d5","id":"6373b6ee6887493d3d309426","seat_numbers":[]},{"_id":"63eac913045674b9b005f2d6","id":"637d0488989c50904d268bb0","seat_numbers":[]}],"updated_at":"2023-02-13T23:34:43.094Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"data":{"_id":"63eac915045674b9b005f2d9","created_at":"2023-02-13T23:34:45.793Z","hotels_ids":[],"number_of_guests":4,"reserve_module":"transports","reserve_status":"pending","transportations_ids":[{"_id":"63eac915045674b9b005f2da","id":"6373b6ee6887493d3d309426","seat_numbers":[]},{"_id":"63eac915045674b9b005f2db","id":"637d0488989c50904d268bb0","seat_numbers":[]}],"updated_at":"2023-02-13T23:34:45.793Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"data":{"_id":"63eac926045674b9b005f2de","created_at":"2023-02-13T23:35:02.472Z","hotels_ids":[],"number_of_guests":4,"reserve_module":"transports","reserve_status":"pending","transportations_ids":[{"_id":"63eac926045674b9b005f2df","id":"6373b6ee6887493d3d309426","seat_numbers":[]},{"_id":"63eac926045674b9b005f2e0","id":"637d0488989c50904d268bb0","seat_numbers":[]}],"updated_at":"2023-02-13T23:35:02.472Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 01:35:19 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"_id":"63eac9399555bf41b3f20add","created_at":"2023-02-13T23:35:21.147Z","hotels_ids":[],"number_of_guests":4,"reserve_module":"transports","reserve_status":"pending","transportations_ids":[{"_id":"63eac9399555bf41b3f20ade","id":"6373b6ee6887493d3d309426","seat_numbers":[]},{"_id":"63eac9399555bf41b3f20adf","id":"637d0488989c50904d268bb0","seat_numbers":[]}],"updated_at":"2023-02-13T23:35:21.147Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"data":{"_id":"63ead2999555bf41b3f20ae2","created_at":"2023-02-14T00:15:21.073Z","hotels_ids":[],"number_of_guests":4,"reserve_module":"transports","reserve_status":"pending","transportations_ids":[{"_id":"63ead2999555bf41b3f20ae3","id":"6373b6ee6887493d3d309426","seat_numbers":[]},{"_id":"63ead2999555bf41b3f20ae4","id":"637d0488989c50904d268bb0","seat_numbers":[]}],"updated_at":"2023-02-14T00:15:21.073Z"},"level":"error","message":"Error :","msg":"Reservation needs data Hotel/Rooms IDs and Transport ID on Trips Module"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:15:53 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error :","msg":"Trans was not found ","transportation_id":[{"_id":"63ead2bf8da978cd899bafa0","id":"6373b6ee6887493d3d309426","seat_numbers":[]},{"_id":"63ead2bf8da978cd899bafa1","id":"637d0488989c50904d268bb0","seat_numbers":[]}]}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:16:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:21:32 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:22:39 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:23:49 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:24:04 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:24:11 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:24:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:24:27 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:25:12 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:25:49 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:29:54 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:30:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:31:26 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:31:27 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:31:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:32:42 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot access 'transportsPromises' before initialization","stack":"ReferenceError: Cannot access 'transportsPromises' before initialization\n    at C:\\Code\\GDS\\server\\models\\reservation_model.js:175:19\n    at Array.map (<anonymous>)\n    at Proxy.methods.<computed> (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\types\\array\\methods\\index.js:1011:24)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:166:54)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:233:9)\n    at Kareem.execPost (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:266:3)\n    at _cb (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:367:15)\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:442:5\n    at C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\model.js:311:7"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:33:24 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:34:59 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:35:53 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:36:07 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:36:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:37:08 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:37:57 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:38:17 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:38:52 GMT+0200 (Eastern European Standard Time)"}
+{"error":{},"level":"error","message":"Error :","msg":" Not all seats are open "}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:40:06 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:40:15 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:40:50 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:41:10 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:41:18 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:41:29 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:41:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:41:38 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:41:39 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:42:17 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:42:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:42:58 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:45:09 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:45:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:45:45 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:46:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'user_id')","stack":"TypeError: Cannot read properties of undefined (reading 'user_id')\n    at model.Query.<anonymous> (C:\\Code\\GDS\\server\\models\\transportation_route_models.js:45:61)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.Query.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:47:25 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:47:30 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'user_id')","stack":"TypeError: Cannot read properties of undefined (reading 'user_id')\n    at model.Query.<anonymous> (C:\\Code\\GDS\\server\\models\\transportation_route_models.js:45:61)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.Query.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:48:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'user_id')","stack":"TypeError: Cannot read properties of undefined (reading 'user_id')\n    at C:\\Code\\GDS\\server\\models\\transportation_route_models.js:51:36\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at runNextTicks (node:internal/process/task_queues:65:3)\n    at processImmediate (node:internal/timers:437:9)\n    at async model.Query.<anonymous> (C:\\Code\\GDS\\server\\models\\transportation_route_models.js:45:3)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:48:54 GMT+0200 (Eastern European Standard Time)"}
+{"driver":{},"level":"error","message":"Error :","msg":"User doesnt exist"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:49:42 GMT+0200 (Eastern European Standard Time)"}
+{"kind":"embedded","level":"error","message":"Error : Cast to embedded failed for value \"{\n  id: new ObjectId(\"6373b6ee6887493d3d309426\"),\n  seats_numbers: [ '14A', '14B', '14C', '14D' ]\n}\" (type Object) at path \"reservations_ids\" because of \"CastError\"","path":"reservations_ids","reason":{"kind":"string","message":"Cast to string failed for value \"[ '14A', '14B', '14C', '14D' ]\" (type Array) at path \"seats_numbers\"","name":"CastError","path":"seats_numbers","reason":null,"stringValue":"\"[ '14A', '14B', '14C', '14D' ]\"","value":["14A","14B","14C","14D"],"valueType":"Array"},"stack":"CastError: Cast to embedded failed for value \"{\n  id: new ObjectId(\"6373b6ee6887493d3d309426\"),\n  seats_numbers: [ '14A', '14B', '14C', '14D' ]\n}\" (type Object) at path \"reservations_ids\" because of \"CastError\"\n    at model.Query.exec (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\query.js:4891:21)\n    at model.Query.Query.then (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\query.js:4990:15)\n    at C:\\Code\\GDS\\server\\models\\reservation_model.js:169:8\n    at Array.map (<anonymous>)\n    at Proxy.methods.<computed> (C:\\Code\\GDS\\server\\node_modules\\mongoose\\lib\\types\\array\\methods\\index.js:1011:24)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:164:54)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:233:9)\n    at Kareem.execPost (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:266:3)\n    at _cb (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:367:15)","stringValue":"\"{\n  id: new ObjectId(\"6373b6ee6887493d3d309426\"),\n  seats_numbers: [ '14A', '14B', '14C', '14D' ]\n}\"","value":{"id":"6373b6ee6887493d3d309426","seats_numbers":["14A","14B","14C","14D"]},"valueType":"Object"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:59:10 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:59:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:59:42 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:59:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 02:59:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:00:17 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:00:58 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:01:57 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:02:13 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:02:41 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:03:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:03:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:04:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:06:04 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:06:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:06:50 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:07:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:07:50 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:07:55 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:08:00 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error :","msg":" Not all seats are open ","seat_numbers":["1A","1B","2A","2B"],"seatsInReservationOfTransport":[]}
+{"level":"error","message":"Error :","msg":" Not all seats are open ","seat_numbers":["14A","14B","14C","14D"],"seatsInReservationOfTransport":[]}
+{"level":"error","message":"Error :","msg":" Not all seats are open ","seat_numbers":["14A","14B","14C","14D"],"seatsInReservationOfTransport":[]}
+{"level":"error","message":"Error :","msg":" Not all seats are open ","seat_numbers":["1A","1B","2A","2B"],"seatsInReservationOfTransport":[]}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:14:49 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:14:52 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:15:32 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:15:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:16:30 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:16:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:17:05 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:22:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:24:39 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:24:43 GMT+0200 (Eastern European Standard Time)"}

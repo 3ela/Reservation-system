@@ -110,13 +110,17 @@ schema.pre(['save', 'findOneAndUpdate'], async function(next) {
         //?   check if the rooms are on the trips module 
         //?   check if the rooms on that specific hotel
         //?   check if the rooms has no trip id
-        checkManyRoomsInHotel(hotel.id, hotel.rooms_ids)
+        checkManyRoomsInHotel(
+          hotel.id, 
+          hotel.rooms_ids, 
+          {trip_id: { $exists: false }, reserve_module: 'trips'}
+        )
         .then(checkRes => {
           console.log("specific rooms .pre => checkRes", checkRes)
         }).catch(checkErr => next(checkErr))
       } else {
         //! if no ids sent then add ALL 
-        checkManyRoomsInHotel(hotel.id)
+        checkManyRoomsInHotel(hotel.id, {trip_id: { $exists: false }, reserve_module: 'trips'})
           .then(checkRes => {
             console.log("all rooms .pre => checkRes", checkRes)
           }).catch(checkErr => next(checkErr))

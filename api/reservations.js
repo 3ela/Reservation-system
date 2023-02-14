@@ -26,9 +26,10 @@ router.post('/', validateUser, authUser, (req, res, next) => {
 //? look at schema pre and post hooks
 router.post('/create', validateUser, authUser, reserveValids, (req, res, next) => {
   let payload = {  ...req.body  };
+
     //* formate Date
-    payload.period.start_date ? payload.period.start_date = formateDate(payload.period?.start_date, `DD-MM-YYYY`) : '';
-    payload.period.end_date ? payload.period.end_date = formateDate(payload.period?.end_date, `DD-MM-YYYY`) : '';
+    payload.period?.start_date ? payload.period.start_date = formateDate(payload.period?.start_date, `DD-MM-YYYY`) : '';
+    payload.period?.end_date ? payload.period.end_date = formateDate(payload.period?.end_date, `DD-MM-YYYY`) : '';
   //* data validation
   validateReq(req, res);
 
