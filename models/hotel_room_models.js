@@ -156,7 +156,7 @@ RoomSchema.pre(['findOneAndUpdate', 'updateOne'], async function(next) {
   //* check if room existss
   const findRes = await this.model.findOne(this.getQuery());
   const payload = this._update;
-
+  console.log('this.', payload)
   //* cehck if room exist
   findRes == null ? next('Room Does not exist') : '';
   
@@ -329,14 +329,11 @@ function checkManyRoomsInHotel(hotel_id, rooms_ids, matchOpts) {
 
 
 
-function checkAllHotelsRooms(hotels_ids, check_total_capacity) {
+function checkAllHotelsRooms(hotels_ids, match_opts, check_total_capacity) {
   return new Promise((resolve, reject) => {
     let hotelsPromises = [];
     hotels_ids.forEach(hotel => {
-      hotelsPromises.push(checkManyRoomsInHotel(hotel.id, hotel.rooms_ids, {
-        reserve_status: false,
-        reserve_module: 'rooms',
-      }));  
+      hotelsPromises.push(checkManyRoomsInHotel(hotel.id, hotel.rooms_ids, match_opts));  
     });
     Promise.all(hotelsPromises).then(values => {
       

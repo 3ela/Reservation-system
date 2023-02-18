@@ -290,7 +290,7 @@ function checkTransportHasSeatsOpen(transport_id, seat_numbers) {
     .then(findRes => {  
       if(findRes != null) {
         try {
-            console.log('transport', seat_numbers, findRes.reserved_seats)
+            console.log('transportation', seat_numbers, findRes.reserved_seats)
             let seatsInReservationOfTransport = differenceBetweenTwoArrays(seat_numbers, findRes.reserved_seats);
             if(seatsInReservationOfTransport.length == seat_numbers.length) {
               resolve(findRes);

@@ -3753,3 +3753,236 @@
 {"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:22:44 GMT+0200 (Eastern European Standard Time)"}
 {"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:24:39 GMT+0200 (Eastern European Standard Time)"}
 {"level":"notice","message":"Listening on port 8000 at Tue Feb 14 2023 03:24:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Fri Feb 17 2023 04:50:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Fri Feb 17 2023 04:52:17 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8000 at Fri Feb 17 2023 04:52:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 04:53:20 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"__v":0,"_id":"634d077ae82f1a065c901574","address":"alex downtown","amenities_ids":["634b307accd34235da34ffea"],"city":"alex","name":"5 stars","reservations_ids":["63eabd51b22d145c3a617618","63eabd8e5c87c4b1b7ef390a","63eabddb91cdd4f505429a0b","63eabe70c35793f20ad99158"],"rooms_ids":[]},"level":"error","message":"Error :","msg":" rooms data is incorrect "}
+{"level":"error","message":"Error :","msg":" Not all seats are open ","seat_numbers":["13A","13B","13C","13D"],"seatsInReservationOfTransport":[]}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 04:57:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error :","msg":" Not all seats are open ","seat_numbers":["15D"],"seatsInReservationOfTransport":[]}
+{"level":"error","message":"Error :","msg":" Not all seats are open ","seat_numbers":["15a"],"seatsInReservationOfTransport":[]}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 04:59:05 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:18:38 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:26:53 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:34:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:49:13 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:49:15 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:50:58 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:51:20 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:51:34 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:52:00 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:54:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:54:51 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:55:35 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:56:54 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Fri Feb 17 2023 22:57:56 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:27:00 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:27:58 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:35:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : ItemModel.find is not a function","stack":"TypeError: ItemModel.find is not a function\n    at C:\\Code\\GDS\\server\\api\\trips.js:11:13\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Code\\GDS\\server\\config\\permissions.js:66:13\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:36:35 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:36:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:37:16 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:37:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:37:31 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:38:16 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:38:30 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : tripModel.findByIdRoomsAndTransports is not a function","stack":"TypeError: tripModel.findByIdRoomsAndTransports is not a function\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:234:15\n    at new Promise (<anonymous>)\n    at checkTripExistAndLimit (C:\\Code\\GDS\\server\\models\\trip_model.js:231:10)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:128:23)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:39:08 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'then')","stack":"TypeError: Cannot read properties of undefined (reading 'then')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:233:7\n    at new Promise (<anonymous>)\n    at checkTripExistAndLimit (C:\\Code\\GDS\\server\\models\\trip_model.js:229:10)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:128:23)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:39:57 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'forEach')","stack":"TypeError: Cannot read properties of undefined (reading 'forEach')\n    at Function.findByIdRoomsAndTransports (C:\\Code\\GDS\\server\\models\\trip_model.js:72:24)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:230:15\n    at new Promise (<anonymous>)\n    at checkTripExistAndLimit (C:\\Code\\GDS\\server\\models\\trip_model.js:227:10)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:128:23)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:40:24 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'forEach')","stack":"TypeError: Cannot read properties of undefined (reading 'forEach')\n    at Function.findByIdRoomsAndTransports (C:\\Code\\GDS\\server\\models\\trip_model.js:73:24)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:231:15\n    at new Promise (<anonymous>)\n    at checkTripExistAndLimit (C:\\Code\\GDS\\server\\models\\trip_model.js:228:10)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:128:23)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:41:20 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error :","msg":" Trip Doesnt exist ","trip_id":"63eadf79e66367121d2ac21f"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:41:40 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'forEach')","stack":"TypeError: Cannot read properties of undefined (reading 'forEach')\n    at Function.findByIdRoomsAndTransports (C:\\Code\\GDS\\server\\models\\trip_model.js:73:24)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:231:15\n    at new Promise (<anonymous>)\n    at checkTripExistAndLimit (C:\\Code\\GDS\\server\\models\\trip_model.js:228:10)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:128:23)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:42:08 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'forEach')","stack":"TypeError: Cannot read properties of undefined (reading 'forEach')\n    at Function.findByIdRoomsAndTransports (C:\\Code\\GDS\\server\\models\\trip_model.js:73:24)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:231:15\n    at new Promise (<anonymous>)\n    at checkTripExistAndLimit (C:\\Code\\GDS\\server\\models\\trip_model.js:228:10)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:128:23)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:42:39 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'forEach')","stack":"TypeError: Cannot read properties of undefined (reading 'forEach')\n    at Function.findByIdRoomsAndTransports (C:\\Code\\GDS\\server\\models\\trip_model.js:75:24)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:233:15\n    at new Promise (<anonymous>)\n    at checkTripExistAndLimit (C:\\Code\\GDS\\server\\models\\trip_model.js:230:10)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:128:23)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:43:00 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:43:09 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : res is not defined","stack":"ReferenceError: res is not defined\n    at Function.findByIdRoomsAndTransports (C:\\Code\\GDS\\server\\models\\trip_model.js:71:7)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:232:15\n    at new Promise (<anonymous>)\n    at checkTripExistAndLimit (C:\\Code\\GDS\\server\\models\\trip_model.js:229:10)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:128:23)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:43:27 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'then')","stack":"TypeError: Cannot read properties of undefined (reading 'then')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:233:7\n    at new Promise (<anonymous>)\n    at checkTripExistAndLimit (C:\\Code\\GDS\\server\\models\\trip_model.js:229:10)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:128:23)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:45:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:45:45 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:46:04 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:46:35 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:46:41 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:46:59 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:47:02 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error :","msg":" Trip Doesnt exist ","trip_id":"63eadf79e66367121d2ac21f"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:48:00 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:48:07 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:49:20 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:49:55 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:50:04 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:50:40 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:50:49 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error :","msg":"User is not Authorized","needed_permission":"rooms.create"}
+{"level":"error","message":"Error :","msg":"User is not Authorized","needed_permission":"rooms.create"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:57:05 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:57:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error :","msg":"User is not Authorized","needed_permission":"rooms.create"}
+{"level":"error","message":"Error :","msg":"User is not Authorized","needed_permission":"rooms.create"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:58:20 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error :","msg":"User is not Authorized","needed_permission":"rooms.create"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:58:38 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error :","msg":"User is not Authorized","needed_permission":"rooms.create"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:59:45 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 01:59:48 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"__v":0,"_id":"63f014fb2febc702f4d056d0","address":"bruh at the downtown","amenities_ids":[],"city":"bruh city","name":"25 stars","reservations_ids":[],"rooms_ids":[]},"level":"error","message":"Error :","msg":" rooms data is incorrect "}
+{"level":"error","message":"Error : Validation Err","stack":"Error: Validation Err\n    at validateReq (C:\\Code\\GDS\\server\\scripts\\validators.js:13:27)\n    at C:\\Code\\GDS\\server\\api\\rooms.js:86:3\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at middleware (C:\\Code\\GDS\\server\\node_modules\\express-validator\\src\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"body":"{\n\t\"reserve_module\": \"trips\",\n\t\"number\": 340,\n\t\"type\": \"suit\",\n\t\"guest_capacity\": 3,\n\t\"price_per_night\": 2000,\n\t\"reserve_status\": false,\n\t\"amenities_ids\": [],\n}","expose":true,"level":"error","message":"Error : Unexpected token } in JSON at position 159","stack":"SyntaxError: Unexpected token } in JSON at position 159\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Code\\GDS\\server\\node_modules\\body-parser\\lib\\types\\json.js:89:19)\n    at C:\\Code\\GDS\\server\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:201:9)\n    at invokeCallback (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:231:16)\n    at done (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:220:7)\n    at IncomingMessage.onEnd (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:280:7)\n    at IncomingMessage.emit (node:events:538:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":400,"statusCode":400,"type":"entity.parse.failed"}
+{"level":"error","message":"Error : Validation Err","stack":"Error: Validation Err\n    at validateReq (C:\\Code\\GDS\\server\\scripts\\validators.js:13:27)\n    at C:\\Code\\GDS\\server\\api\\rooms.js:86:3\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at middleware (C:\\Code\\GDS\\server\\node_modules\\express-validator\\src\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:06:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:11:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:12:49 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:14:21 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:14:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:14:51 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:14:53 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:15:00 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:15:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:15:30 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:15:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:15:58 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:16:27 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:16:31 GMT+0200 (Eastern European Standard Time)"}
+{"body":"{\n\t\"reserve_module\": \"trips\",\n\t\"number\": 341,\n\t\"type\": \"medium room\",\n\t\"guest_capacity\": 4,\n\t\"price_per_night\": 1000,\n\t\"reserve_status\": false,\n\t\"reserve_module\": \"rooms\",\n\t\"amenities_ids\": [],\n\t\"hotel_id\": \"63f014fb2febc702f4d056d0\",\n\n}","expose":true,"level":"error","message":"Error : Unexpected token } in JSON at position 236","stack":"SyntaxError: Unexpected token } in JSON at position 236\n    at JSON.parse (<anonymous>)\n    at parse (C:\\Code\\GDS\\server\\node_modules\\body-parser\\lib\\types\\json.js:89:19)\n    at C:\\Code\\GDS\\server\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (node:async_hooks:201:9)\n    at invokeCallback (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:231:16)\n    at done (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:220:7)\n    at IncomingMessage.onEnd (C:\\Code\\GDS\\server\\node_modules\\raw-body\\index.js:280:7)\n    at IncomingMessage.emit (node:events:538:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":400,"statusCode":400,"type":"entity.parse.failed"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:20:03 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:20:27 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:20:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:20:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:20:49 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:20:51 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'findIndex')","stack":"TypeError: Cannot read properties of undefined (reading 'findIndex')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:183:47\n    at Proxy.forEach (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\trip_model.js:182:28)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'findIndex')","stack":"TypeError: Cannot read properties of undefined (reading 'findIndex')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:183:47\n    at Proxy.forEach (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\trip_model.js:182:28)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:22:27 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'findIndex')","stack":"TypeError: Cannot read properties of undefined (reading 'findIndex')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:183:47\n    at Proxy.forEach (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\trip_model.js:182:28)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:24:12 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'findIndex')","stack":"TypeError: Cannot read properties of undefined (reading 'findIndex')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:183:47\n    at Proxy.forEach (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\trip_model.js:182:28)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:25:16 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'findIndex')","stack":"TypeError: Cannot read properties of undefined (reading 'findIndex')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:184:47\n    at Proxy.forEach (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\trip_model.js:183:28)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:26:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'findIndex')","stack":"TypeError: Cannot read properties of undefined (reading 'findIndex')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:184:47\n    at Proxy.forEach (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\trip_model.js:183:28)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:26:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'findIndex')","stack":"TypeError: Cannot read properties of undefined (reading 'findIndex')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:184:47\n    at Proxy.forEach (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\trip_model.js:183:28)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 02:27:59 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'findIndex')","stack":"TypeError: Cannot read properties of undefined (reading 'findIndex')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:184:47\n    at Proxy.forEach (<anonymous>)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\trip_model.js:183:28)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:24:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:24:42 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'push')","stack":"TypeError: Cannot read properties of undefined (reading 'push')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:75:23\n    at Proxy.forEach (<anonymous>)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:74:30\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:27:32 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'concat')","stack":"TypeError: Cannot read properties of undefined (reading 'concat')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:75:23\n    at Proxy.forEach (<anonymous>)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:74:30\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:27:51 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:28:10 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:28:40 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:29:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:29:17 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot access 'rooms' before initialization","stack":"ReferenceError: Cannot access 'rooms' before initialization\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:76:29\n    at Proxy.forEach (<anonymous>)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:75:30\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:29:29 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:29:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:30:53 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:33:13 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:34:39 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:35:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:35:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:36:03 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:36:17 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:36:20 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:36:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:36:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:36:55 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:37:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:37:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:37:45 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:38:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:40:54 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:40:58 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:41:05 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:41:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:42:15 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:42:20 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'forEach')","stack":"TypeError: Cannot read properties of undefined (reading 'forEach')\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:245:29\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:42:58 GMT+0200 (Eastern European Standard Time)"}
+{"hotel":{"_id":"63f02d24f125be3619106906","id":"63f014fb2febc702f4d056d0","rooms_ids":["63f014fb2febc702f4d056d2","63f014fb2febc702f4d056d3"]},"level":"error","message":"Error :","msg":" This Room's Data is Incorrect on that Hotel","room":"63f014fb2febc702f4d056d2"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:43:38 GMT+0200 (Eastern European Standard Time)"}
+{"hotel":{"_id":"63f02d4bd41c5c5e3d91b2b9","id":"63f014fb2febc702f4d056d0","rooms_ids":["63f014fb2febc702f4d056d2","63f014fb2febc702f4d056d3"]},"level":"error","message":"Error :","msg":" This Room's Data is Incorrect on that Hotel","room":"63f014fb2febc702f4d056d2"}
+{"hotel":{"_id":"63f02d5cd41c5c5e3d91b2c0","id":"63f014fb2febc702f4d056d0","rooms_ids":["63f014fb2febc702f4d056d2","63f014fb2febc702f4d056d3"]},"level":"error","message":"Error :","msg":" This Room's Data is Incorrect on that Hotel","room":"63f014fb2febc702f4d056d2"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:45:06 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : [object Object] is not a function","stack":"TypeError: [object Object] is not a function\n    at Array.findIndex (<anonymous>)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:247:30\n    at Proxy.forEach (<anonymous>)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:246:29\n    at Proxy.forEach (<anonymous>)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:245:30\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:45:41 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:45:53 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : [object Object] is not a function","stack":"TypeError: [object Object] is not a function\n    at Array.findIndex (<anonymous>)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:247:48\n    at Proxy.forEach (<anonymous>)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:246:29\n    at Proxy.forEach (<anonymous>)\n    at C:\\Code\\GDS\\server\\models\\trip_model.js:245:30\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:46:04 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:46:35 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:46:51 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:46:58 GMT+0200 (Eastern European Standard Time)"}
+{"hotel":{"_id":"63f02e16d1da23903f7ce07a","id":"63f014fb2febc702f4d056d0","rooms_ids":["63f014fb2febc702f4d056d2","63f014fb2febc702f4d056d3"]},"level":"error","message":"Error :","msg":" This Room's Data is Incorrect on that Hotel","room":"63f014fb2febc702f4d056d2"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:48:04 GMT+0200 (Eastern European Standard Time)"}
+{"hotel":{"_id":"63f02e553c374dd6c7bab414","id":"63f014fb2febc702f4d056d0","rooms_ids":["63f014fb2febc702f4d056d2","63f014fb2febc702f4d056d3"]},"level":"error","message":"Error :","msg":" This Room's Data is Incorrect on that Hotel","room":"63f014fb2febc702f4d056d2"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:48:31 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error :","msg":" This Transportation's Data is Incorrect","transport":{"_id":"63f02e743c6bd609cd14c961","id":"637e442c803197689a9549cf","seats_numbers":["5A","5B","5C","5D"]}}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:48:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:49:18 GMT+0200 (Eastern European Standard Time)"}
+{"data":{"__v":0,"_id":"63f014fb2febc702f4d056d0","address":"bruh at the downtown","amenities_ids":[],"city":"bruh city","name":"25 stars","reservations_ids":[],"rooms_ids":[]},"level":"error","message":"Error :","msg":" rooms data is incorrect "}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:50:38 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:52:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:52:31 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:53:20 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:53:50 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:53:55 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Found non-callable @@iterator","stack":"TypeError: Found non-callable @@iterator\n    at C:\\Code\\GDS\\server\\models\\hotel_room_models.js:336:27\n    at Proxy.forEach (<anonymous>)\n    at C:\\Code\\GDS\\server\\models\\hotel_room_models.js:335:16\n    at new Promise (<anonymous>)\n    at checkAllHotelsRooms (C:\\Code\\GDS\\server\\models\\hotel_room_models.js:333:10)\n    at model.<anonymous> (C:\\Code\\GDS\\server\\models\\reservation_model.js:128:24)\n    at callMiddlewareFunction (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:530:27)\n    at model.next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:79:7)\n    at _next (C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:132:10)\n    at C:\\Code\\GDS\\server\\node_modules\\kareem\\index.js:555:30"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:54:40 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:56:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:56:37 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:56:41 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:56:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:58:51 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:58:53 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 03:59:07 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:00:56 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:01:06 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:01:16 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:01:18 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:01:21 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:01:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:01:55 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:02:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:02:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:02:41 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:02:58 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:03:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:03:32 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:03:42 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:04:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:04:13 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:05:07 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:08:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:09:18 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:10:22 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:13:08 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:14:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:15:08 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:15:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:15:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:15:38 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:15:42 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:16:05 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:17:00 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:17:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:17:29 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:17:34 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:17:54 GMT+0200 (Eastern European Standard Time)"}
+{"capacity_check":false,"level":"error","message":"Error :","msg":" Capacity Check Failed, need more guest capacity ","total_guest_capacity":0,"values":[{"__v":0,"_id":"63f014fb2febc702f4d056d0","address":"bruh at the downtown","amenities_ids":[],"city":"bruh city","name":"25 stars","reservations_ids":[],"rooms_ids":[{"__v":0,"_id":"63f014fb2febc702f4d056d2","amenities_ids":[],"created_at":"2023-02-17T23:59:55.193Z","guest_capacity":5,"hotel_id":"63f014fb2febc702f4d056d0","number":339,"price_per_night":2100,"reserve_module":"trips","reserve_status":false,"type":"suit","updated_at":"2023-02-18T01:24:45.674Z"},{"__v":0,"_id":"63f014fb2febc702f4d056d3","amenities_ids":[],"created_at":"2023-02-17T23:59:55.194Z","guest_capacity":4,"hotel_id":"63f014fb2febc702f4d056d0","number":341,"price_per_night":1000,"reserve_module":"trips","reserve_status":false,"type":"medium room","updated_at":"2023-02-18T01:24:45.674Z"}]}]}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:18:12 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:18:31 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:21:52 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:22:17 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:23:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Sat Feb 18 2023 04:24:21 GMT+0200 (Eastern European Standard Time)"}

@@ -78,7 +78,7 @@ app.get('*', (req, res, next) => {
 
 //* error handler
 app.use((error, req, res, next) => {
-  console.log("app.use => error", error.cause)
+  // console.log("app.use => error", error.cause)
   if(error) {
     console.log('Server Error :', error)
     logger.error('Error :', error)

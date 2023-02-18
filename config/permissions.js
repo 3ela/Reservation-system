@@ -66,8 +66,8 @@ const permissionObj = {
             next();
           }else {
             res.status(401).json({
-              msg: `User is not Authorized`,
-              needed_permission: neededAuthorization,
+              // msg: `User is not Authorized`,
+              // needed_permission: neededAuthorization,
               // user: user.role_id
             });
           }
@@ -77,7 +77,7 @@ const permissionObj = {
   },
   checkPermissionExistance: (req, permission, next) => {
     let userPerms = req.authorizedUser.role_id.permissions;
-    let isAuthorized = userPerms.includes(permission)
+    let isAuthorized = userPerms.includes(permission) || userPerms.includes('admin');
     if (isAuthorized == false) {
       next({
         msg: `User is not Authorized`,

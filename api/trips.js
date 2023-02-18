@@ -3,7 +3,7 @@ var router = express.Router();
 const { authUser } = require('../config/permissions');
 const { validateUser } = require('../config/jwt');
 const { validateReq, tripValids: itemValids  } = require('../scripts/validators');
-const ItemModel = require('../models/trip_model');
+const { tripModel: ItemModel } = require('../models/trip_model');
 
 
 router.post('/', validateUser, authUser, (req, res, next) => {

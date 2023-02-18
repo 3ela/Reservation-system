@@ -3,7 +3,6 @@ let Schema = mongoose.Schema;
 // const { HotelModel, checkRoomInHotel } = require('./hotel_room_models');
 // const { TransportationModel, checkForTransportationCapacity } = require('./transportationmodel');
 const { checkItemExistance, checkManyItemsExistance } = require('../config/db');
-const { isDatePassed } = require('../scripts/helpers');
 const PlacesModel = require('./places_model');
 const { RoomModel, HotelModel, checkManyRoomsInHotel } = require('./hotel_room_models');
 const { 
@@ -62,8 +61,35 @@ const schema = new Schema({
   timestamps: {
     createdAt: 'created_at', 
     updatedAt: 'updated_at'
+  },
+  statics: {
+    findByIdRoomsAndTransports(id) {
+      return new Promise ((resolve, reject) => {
+        let rooms = [], transports = [];
+        this.findById(id)
+          .then(res => {
+            if(res == null) {
+              resolve(null)
+            } else {
+              res.hotels_ids.forEach(hotel => {
+                rooms = rooms.concat([...hotel.rooms_ids])
+              })
+              res.transportations_ids.forEach(transport => {
+                transports.push(transport)
+              })
+              resolve({
+                rooms,
+                transports
+              })
+            }
+          }).catch(err => reject(err))   
+      })
+    },
+
   }
-});
+},
+
+);
 
 //* creating a trip 
 //* 1. there must be a destination
@@ -135,7 +161,7 @@ schema.pre(['save', 'findOneAndUpdate'], async function(next) {
   }
 
   //* pre update changes
-  if(payload.id) {
+  if(payload._update && payload.id) {
     if(payload.transportations_ids) {
       //* check for difference in old transports and new transports
       let transportsDifference = differenceBetweenTwoArrays(findRes?.transportations_ids, payload.transportations_ids);
@@ -176,7 +202,6 @@ schema.pre(['save', 'findOneAndUpdate'], async function(next) {
 
 schema.post(['save', 'findOneAndUpdate'], async function(doc, next) {
   const payload = doc;
-  // console.log("schema.post => payload", payload)
   
   //* add trip id to added transports if exist
   if(payload.transportations_ids && payload.transportations_ids.length > 0) {
@@ -205,55 +230,56 @@ schema.post(['save', 'findOneAndUpdate'], async function(doc, next) {
 
 //* ----- *//
 //* check for trip existance and limit
-function checkTripExistAndLimit(trip_id, transports_ids, hotels_ids, number_of_guests) {
+function checkTripExistWithRoomsAndTransports(payload) {
   return new Promise((resolve, reject) => {
-  
-    //* check for the trip ID
-    tripModel.findById(trip_id)
-      .then(findRes => {
-        if(findRes != null) {
-          //* counters
-          let isSeatEqualGuest = 0;
-          let isRoomsEqualGuest = 0;
-
-          transports_ids.forEach(transport => {
-            let isTransportOnTrip = findRes.transportations_ids.findIndex(el => el == transport); 
-            if(isTransportOnTrip != -1) {
-              checkTransportHasSeatsOpen(transport.id, transport.seat_numbers)
-                .then(checkRes => { 
-                  isSeatEqualGuest = isSeatEqualGuest + transport.seat_numbers;
-                }).catch(checkErr => reject(checkErr))
-            }
-          })
-          //* check if number of seats eq guests
-          if(isSeatEqualGuest < number_of_guests) {
-            reject({
-              msg: ' Seats are not enough for the guests ',
-              number_of_seats: isSeatEqualGuest,
-              number_of_guests
+    
+    //* check for trip existance 
+    tripModel.findByIdRoomsAndTransports(payload.trip_id)
+      .then(checkRes => {
+        if(checkRes != null) {
+          //* check if rooms and transportations are assigned to this trip
+          let roomsExist = true;
+          payload.hotels_ids.forEach(hotel => {
+            hotel.rooms_ids.forEach(room => {
+              checkRes.rooms.find(el => el == room) != -1 ? '' : roomsExist = room;
+              if(roomsExist != true) {
+                reject({
+                  msg: ' This Room\'s Data is Incorrect on that Hotel',
+                  hotel,
+                  room
+                })
+              }
             })
-          }  
+          });
 
-          hotels_ids.forEach(hotel => {
-            let isHotelOnTrip = findRes.hotels_ids.findIndex(el => el.id == hotel.id); 
-            let diffInRooms = differenceBetweenTwoArrays(hotel.rooms_ids, findRes.hotels_ids.rooms_ids) 
-            if(isHotelOnTrip =! -1 && hotel.rooms_ids.length == diffInRooms.length) {
-              //* aggregate teh rooms number
-              
+          let transportsExist = true;
+          payload.transportations_ids.forEach(transport => {
+            checkRes.transports.find(el => el == transport.id) != -1 ? '' : transportsExist = transport;
+            if(transportsExist != true) {
+              reject({
+                msg: ' This Transportation\'s Data is Incorrect',
+                transport
+              })
             }
           })
+
+          //** all payload Rooms and Transports exist on that trip
+          resolve(checkRes)
         } else {
           reject({
-            msg: `This Trip doesnt exist`,
-            trip_id
+            msg: ' Trip Doesnt exist ',
+            trip_id: payload.trip_id
           })
-        }   
-      }).catch(findErr => reject(findErr)) 
+        }
+      }).catch(checkErr => reject(checkErr))
   })
 }
-  
+
 
 
 const tripModel =  mongoose.model('Trip', schema);
 
-module.exports = tripModel;
+module.exports = {
+  tripModel,
+  checkTripExistWithRoomsAndTransports
+};

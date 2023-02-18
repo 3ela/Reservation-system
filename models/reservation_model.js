@@ -3,6 +3,7 @@ let Schema = mongoose.Schema;
 
 const { HotelModel, RoomModel, checkRoomInHotel, checkAllHotelsRooms } = require('./hotel_room_models');
 const { TransportationModel, checkForTransportationCapacity, checkAllTransportsHasSeatsOpen } = require('./transportation_route_models');
+const { checkTripExistWithRoomsAndTransports, tripModel } = require('./trip_model.js');
 
 const schema = new Schema({
   period: {
@@ -85,8 +86,10 @@ schema.pre('save', function(next) {
     ) {
       
       //* check for all hotel and rooms exist on it
-      checkAllHotelsRooms(payload.hotels_ids)
-      .then(checkRes => {
+      checkAllHotelsRooms(payload.hotels_ids, {
+        reserve_status: false,
+        reserve_module: 'trips',
+      }).then(checkRes => {
         if(checkRes == null) {
           next({
             msg: ` Some of the Rooms Ids Are Not found on the Hotel `,
@@ -121,14 +124,21 @@ schema.pre('save', function(next) {
     // ? trip doenst need a period
     //! use guest number to check space in transport and rooms
     //? if no treansport or rooms then AUTO reserve places for the user
-
-    let roomsPromise = checkAllHotelsRooms(payload.hotels_ids, payload.number_of_guests);
+    let roomsPromise = checkAllHotelsRooms(payload.hotels_ids, { reserve_status: false, reserve_module: 'trips' } );
     let transportsPromise = checkAllTransportsHasSeatsOpen(payload.transportations_ids, payload.number_of_guests);
-    // let tripPromise = 
+    let tripPromise = checkTripExistWithRoomsAndTransports(payload);
     
-    Promise.all([roomsPromise, transportsPromise])
-      .then(values => {
-      }).catch(valErr => next(valErr))
+    Promise.all(
+      [
+        roomsPromise,
+        transportsPromise,
+        tripPromise,
+      ]
+    )
+    .then(values => {
+      next();
+      
+    }).catch(valErr => next(valErr))
   }else {
     if(payload.reserve_module == 'rooms' && !(payload.hotels_ids)) {
       next({
@@ -159,7 +169,7 @@ schema.pre('save', function(next) {
 
 schema.post('save', function(doc, next) {
   //* add reserve_id to all object exists on the created shit
-  if(doc.reserve_module == 'rooms') {
+  if(doc.reserve_module == 'rooms' || doc.reserve_module == 'trips') {
     //* create two promise loops for each hotel and each room inside each hotel
     let hotelPromise = doc.hotels_ids.map(hotel => hotelSavePromise(hotel, doc))
 
@@ -167,7 +177,8 @@ schema.post('save', function(doc, next) {
       next()
     }).catch(hotelPromisesErr => next(hotelPromisesErr))
 
-  }else if(doc.reserve_module == 'transports') {
+  }else if(doc.reserve_module == 'transports' || doc.reserve_module == 'trips') {
+
     let transportsPromises = doc.transportations_ids.map(transport => {
       return TransportationModel.findOneAndUpdate(
         { _id: transport.id }, 
@@ -181,8 +192,14 @@ schema.post('save', function(doc, next) {
     Promise.all(transportsPromises)
       .then(transportsRes => next())
       .catch(transportsErr => next(transportsErr))
+
   }else if(doc.reserve_module == 'trips') {
-    
+    //* update trip with this reservation id
+    tripModel.findOneAndUpdate(
+      { _id: doc.trip_id },
+      { $push: { reservations_ids: { id: doc.id }} }
+    ).then(tripRes => next())
+    .catch(tripErr => next(tripErr))
   }
 });
 

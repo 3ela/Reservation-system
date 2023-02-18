@@ -76,7 +76,8 @@ router.put('/:id/update', validateUser, roomValids, (req, res, next) => {
     price_per_night: req.body.price_per_night,
     hotel_id: req.body.hotel_id,
     amenities_ids: req.body.amenities_ids,
-    id: req.params.id
+    reserve_module: req.body.reserve_module,
+    id: req.params.id,
   };
   let options = {
     returnDocument: 'after', 

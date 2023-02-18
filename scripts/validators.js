@@ -49,7 +49,7 @@ validatorsObj = {
     check('number', 'number is required').not().isEmpty(),
     check('guest_capacity', 'guest capacity is required').not().isEmpty(),
     check('price_per_night', 'price per night is required').not().isEmpty(),
-    check('hotel_id', 'hotel id night is required').not().isEmpty(),
+    check('hotel_id', 'hotel id  is required').not().isEmpty(),
   ],
   roomDeleteManyValids: [
     check('rooms_ids', 'room\'s ids is required').not().isEmpty(),

@@ -35,9 +35,7 @@ router.post('/create', validateUser, authUser, (req, res, next) => {
       data: createRes
     });
   }).catch(createErr => {
-    res.status(400).json({
-      err: createErr
-    });
+    next(createErr)
   });
  
 });

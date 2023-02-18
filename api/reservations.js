@@ -6,6 +6,7 @@ const { validateReq, reserveValids } = require('../scripts/validators');
 const ItemModel = require('../models/reservation_model');
 const { formateDate } = require('../scripts/helpers');
 
+const Axios = require('axios');
 
 router.post('/', validateUser, authUser, (req, res, next) => {
 
@@ -35,10 +36,17 @@ router.post('/create', validateUser, authUser, reserveValids, (req, res, next) =
 
   ItemModel.create(payload)
     .then(createRes => {
+      let url = 'http://localhost:8000/reservations/new/'
       res.status(200).json({
         msg: `Created Successfully`,
         data: createRes
       });
+      // Axios.post(url, {
+      //   reserve_id: createRes.id,
+      //   TimeStamp: createRes.created_at
+      // }).then(axiosRes => {
+      //   console.log(axiosRes)
+      // })
     }).catch(createErr => next(createErr))
 });
 
