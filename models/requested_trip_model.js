@@ -3,8 +3,8 @@ let Schema = mongoose.Schema;
 
 const schema = new Schema({
   city: {
-     type: String,
-     required: true
+    type: String,
+    required: true
   },
   time: {
     start_date: Date,
@@ -22,13 +22,14 @@ const schema = new Schema({
   },
 
 
-  },
-  { 
-    timestamps: {
-      createdAt: 'created_at', 
-      updatedAt: 'updated_at'
-    }
-  } 
+},
+{ 
+  timestamps: {
+    createdAt: 'created_at', 
+    updatedAt: 'updated_at'
+  }
+}
+
 );
 
 module.exports = mongoose.model('RequestedTrips', schema)

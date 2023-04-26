@@ -41,6 +41,8 @@ router.post('/create', validateUser, authUser, reserveValids, (req, res, next) =
         msg: `Created Successfully`,
         data: createRes
       });
+
+      // todo use the events to store data on python backend
       // Axios.post(url, {
       //   reserve_id: createRes.id,
       //   TimeStamp: createRes.created_at

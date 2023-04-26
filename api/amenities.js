@@ -22,16 +22,20 @@ router.post('/', validateUser, authUser, (req, res, next) => {
 router.post('/create', validateUser, amenityUpload, amenityValids, (req, res, next) => {
   let payload = {
     ...req.body,
-    icon: {
+  };
+  if(payload.icon) {
+    payload.icon = {
       ...req.file,
       full_path: process.env.IMAGE_PATH + req.file.filename
     }
-  };
+  }
+  console.log(payload);
   //* data validations
   validateReq(req, res);
   
   AmenityModel.create(payload)
   .then(createRes => {
+    console.log(createRes);
     res.status(200).json({
       msg: `Created Successfully`,
       data: createRes

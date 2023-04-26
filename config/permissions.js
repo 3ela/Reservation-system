@@ -86,9 +86,14 @@ const permissionObj = {
     }
   },
   checkForBlacklistedUser: (userId) => {
+    // todo blacklisted users 
     //* connect to the DB
     //* if current User ID in the blacklist => logout user
     //* else done
+  },
+  createListPermissionsReturnData() {
+    // todo all current permissions
+    //* make the 
   }
 }
 
