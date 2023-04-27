@@ -23,7 +23,7 @@ router.post('/permissions', validateUser, (req, res, next) => {
   let permissionsList = getPermissionsFromJSON();
   res.status(200).json({
     msg: 'Permissions Found',
-    data: permissionsList.permissions,
+    data: permissionsList.permissions
   })
 });
 

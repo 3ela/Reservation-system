@@ -108,7 +108,7 @@ app.use((error, req, res, next) => {
 app.listen(port, () => {
   var ListenDate = currentDate();
   usersSeeder();
-  // permissionsSeeder(app);
+  permissionsSeeder(app);
   // console.log(`Listening on port ${port} at ${ListenDate}`)
   logger.notice(`Listening on port ${port} at ${ListenDate}`)
 })

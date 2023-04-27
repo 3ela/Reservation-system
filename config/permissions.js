@@ -97,13 +97,29 @@ const permissionObj = {
   },
   getPermissionsFromJSON: () => {
     var result, fileRead;
-    fileRead = fs.readFileSync('permissions.json', 'utf8');
-    permissionsList = JSON.parse(fileRead);
-    result = {
-      permissionsCount: permissionsList.length,
-      permissions: [...permissionsList.map(perm => perm.permission)]
+    //* read current file
+    //* convert it into a set to remove replicated perms
+    if (fs.existsSync('permissions.json')) {
+      fileRead = fs.readFileSync('permissions.json', 'utf8');
+      permissionsList = JSON.parse(fileRead);
+      permissionsSet = new Set();
+      
+      //* return only needed data
+      permissionsList.forEach(perm => permissionsSet.add(perm.permission));
+      result = {
+        permissionsList: permissionsList,
+        permissionsCount: permissionsList.length,
+        permissions: Array.from(permissionsSet)
+      }
+      return result;
+    } else {
+      return result = {
+        permissionsList: [],
+        permissionsCount: 0,
+        permissions: []
+      }
     }
-    return result;
+      
   }
 }
 
