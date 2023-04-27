@@ -4418,3 +4418,94 @@
 {"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:53:10 GMT+0200 (Eastern European Standard Time)"}
 {"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:53:23 GMT+0200 (Eastern European Standard Time)"}
 {"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:53:25 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:55:37 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:55:45 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:56:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:56:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:56:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:57:06 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:57:28 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Validation Err","stack":"Error: Validation Err\n    at validateReq (C:\\Code\\GDS\\server\\scripts\\validators.js:13:27)\n    at C:\\Code\\GDS\\server\\api\\users.js:32:3\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at middleware (C:\\Code\\GDS\\server\\node_modules\\express-validator\\src\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:58:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:58:51 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:59:10 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 04:59:56 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:00:09 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:00:30 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Validation Err","stack":"Error: Validation Err\n    at validateReq (C:\\Code\\GDS\\server\\scripts\\validators.js:13:27)\n    at C:\\Code\\GDS\\server\\api\\users.js:32:3\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at middleware (C:\\Code\\GDS\\server\\node_modules\\express-validator\\src\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:01:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:01:43 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Validation Err","stack":"Error: Validation Err\n    at validateReq (C:\\Code\\GDS\\server\\scripts\\validators.js:13:27)\n    at C:\\Code\\GDS\\server\\api\\users.js:32:3\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at middleware (C:\\Code\\GDS\\server\\node_modules\\express-validator\\src\\middlewares\\check.js:16:13)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:04:11 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:04:27 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:04:49 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:04:51 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:05:52 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:07:04 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:07:12 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:08:09 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:08:56 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:10:08 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:10:12 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:10:14 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:10:26 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:10:41 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:10:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:10:54 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:11:17 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:11:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:12:01 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:13:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:13:58 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:14:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of undefined (reading 'id')","stack":"TypeError: Cannot read properties of undefined (reading 'id')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:49:44\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:16:40 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:16:54 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:17:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:17:50 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'permissions')","stack":"TypeError: Cannot read properties of null (reading 'permissions')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:66:26\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'permissions')","stack":"TypeError: Cannot read properties of null (reading 'permissions')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:66:26\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'permissions')","stack":"TypeError: Cannot read properties of null (reading 'permissions')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:66:26\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'permissions')","stack":"TypeError: Cannot read properties of null (reading 'permissions')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:66:26\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:18:56 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'permissions')","stack":"TypeError: Cannot read properties of null (reading 'permissions')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:66:26\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'permissions')","stack":"TypeError: Cannot read properties of null (reading 'permissions')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:66:26\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'permissions')","stack":"TypeError: Cannot read properties of null (reading 'permissions')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:66:26\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:20:38 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'role_id')","stack":"TypeError: Cannot read properties of null (reading 'role_id')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:55:24\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'role_id')","stack":"TypeError: Cannot read properties of null (reading 'role_id')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:55:24\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:23:37 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:23:42 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : user is not defined","stack":"ReferenceError: user is not defined\n    at authUser (C:\\Code\\GDS\\server\\config\\permissions.js:83:44)\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Code\\GDS\\server\\config\\jwt.js:32:9\n    at C:\\Code\\GDS\\server\\node_modules\\jsonwebtoken\\verify.js:223:12\n    at getSecret (C:\\Code\\GDS\\server\\node_modules\\jsonwebtoken\\verify.js:90:14)\n    at Object.module.exports [as verify] (C:\\Code\\GDS\\server\\node_modules\\jsonwebtoken\\verify.js:94:10)\n    at validateUser (C:\\Code\\GDS\\server\\config\\jwt.js:24:9)\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)"}
+{"level":"error","message":"Error : user is not defined","stack":"ReferenceError: user is not defined\n    at authUser (C:\\Code\\GDS\\server\\config\\permissions.js:83:44)\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at C:\\Code\\GDS\\server\\config\\jwt.js:32:9\n    at C:\\Code\\GDS\\server\\node_modules\\jsonwebtoken\\verify.js:223:12\n    at getSecret (C:\\Code\\GDS\\server\\node_modules\\jsonwebtoken\\verify.js:90:14)\n    at Object.module.exports [as verify] (C:\\Code\\GDS\\server\\node_modules\\jsonwebtoken\\verify.js:94:10)\n    at validateUser (C:\\Code\\GDS\\server\\config\\jwt.js:24:9)\n    at Layer.handle [as handle_request] (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Code\\GDS\\server\\node_modules\\express\\lib\\router\\route.js:144:13)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:24:13 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:25:11 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:27:17 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:28:19 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:28:36 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:31:33 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:31:46 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:36:23 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:36:31 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:38:04 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:38:35 GMT+0200 (Eastern European Standard Time)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'role_id')","stack":"TypeError: Cannot read properties of null (reading 'role_id')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:56:24\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'role_id')","stack":"TypeError: Cannot read properties of null (reading 'role_id')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:56:24\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"error","message":"Error : Cannot read properties of null (reading 'role_id')","stack":"TypeError: Cannot read properties of null (reading 'role_id')\n    at C:\\Code\\GDS\\server\\config\\permissions.js:56:24\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:40:00 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:40:02 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:40:42 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:40:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:40:57 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:41:13 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:42:44 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:42:57 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:43:30 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:43:48 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:44:07 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:45:34 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:46:11 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:46:39 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:46:56 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:48:47 GMT+0200 (Eastern European Standard Time)"}
+{"level":"notice","message":"Listening on port 8001 at Thu Apr 27 2023 05:48:54 GMT+0200 (Eastern European Standard Time)"}

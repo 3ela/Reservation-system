@@ -13,7 +13,7 @@ const newItem = {
   unit_count: 2,
 }
 const user = {
-  email: 'admin3@email.com',
+  email: 'admin@email.com',
   password: '1234567m!',
 }
 var token, createdItem;

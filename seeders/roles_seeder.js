@@ -13,13 +13,9 @@ function rolesSeeder() {
     mongooseInit().then(db => {
       RoleModel.find({})
         .then(res => {
-          if(res.length == 0) {
-            seedRoles().then(seededRole => {
-              resolve(seededRole);
-            })
-          } else {
-            resolve(res[1].id);
-          }
+          seedRoles().then(seededRole => {
+            resolve(seededRole);
+          })
         })
     })
   })

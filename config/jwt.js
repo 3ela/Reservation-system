@@ -24,7 +24,7 @@ let jwtObj = {
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, function(err, decoded) {
       if(err) {
         res.status(401).json({
-          msg: `Auth error`,
+          msg: `Authenticate error`,
           err
         });
       }else {

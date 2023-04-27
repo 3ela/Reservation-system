@@ -49,10 +49,11 @@ const permissionObj = {
       UserModel.findById(req.validatedUser.id)
       .populate('role_id')
       .then(user => {
+
         if(user == null) {
-          res.status(401).json({
+          res.status(404).json({
             msg: `User Doesnt exist`,
-            user: user.role_id
+            // user: user.role_id
           });
         } else {
           if(user.role_id == null) {
@@ -70,9 +71,9 @@ const permissionObj = {
             next();
           }else {
             res.status(401).json({
-              // msg: `User is not Authorized`,
-              // needed_permission: neededAuthorization,
-              // user: user.role_id
+              msg: `User is not Authorized !!!`,
+              needed_permission: neededAuthorization,
+              user: user.role_id
             });
           }
         }

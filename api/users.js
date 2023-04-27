@@ -12,7 +12,7 @@ const {
 } = require('../scripts/validators');
 const { authUser } = require('../config/permissions');
 
-router.post('/', validateUser, (req, res, next) => {
+router.post('/', validateUser, authUser, (req, res, next) => {
   
   UserModel.find({})
   .populate('role_id')
