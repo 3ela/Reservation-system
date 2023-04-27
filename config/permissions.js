@@ -1,5 +1,6 @@
 const { mongooseInit } = require('./db');
 const UserModel = require('../models/user_model');
+const fs = require('fs');
 
 const permissionObj = {
   appModules: [
@@ -21,6 +22,9 @@ const permissionObj = {
       switch (pathFunction) {
         case `/`:
           neededAuthorization = `${pathModel}.list`;
+          break;
+        case `/permissions`:
+          neededAuthorization = `permissions.list`;
           break;
         case `/signup`:
           neededAuthorization = `${pathModel}.create`;
@@ -91,9 +95,15 @@ const permissionObj = {
     //* if current User ID in the blacklist => logout user
     //* else done
   },
-  createListPermissionsReturnData() {
-    // todo all current permissions
-    //* make the 
+  getPermissionsFromJSON: () => {
+    var result, fileRead;
+    fileRead = fs.readFileSync('permissions.json', 'utf8');
+    permissionsList = JSON.parse(fileRead);
+    result = {
+      permissionsCount: permissionsList.length,
+      permissions: [...permissionsList.map(perm => perm.permission)]
+    }
+    return result;
   }
 }
 

@@ -27,9 +27,9 @@ router.post('/create', validateUser, amenityUpload, amenityValids, (req, res, ne
     payload.icon = {
       ...req.file,
       full_path: process.env.IMAGE_PATH + req.file.filename
-    }
+    };
+    payload.icon_path = `${url}/uploads/images/${req.file.filename}`;
   }
-  console.log(payload);
   //* data validations
   validateReq(req, res);
   
@@ -54,19 +54,29 @@ router.post('/:id', validateUser, authUser, (req, res, next) => {
     }).catch(findErr => next(findErr))
 });
 
-router.put('/:id/update', validateUser, amenityValids, authUser, (req, res, next) => {
+router.put('/:id/update', validateUser, amenityUpload, amenityValids, authUser, (req, res, next) => {
+  // const url = req.protocol + '://' + req.get("host");
+  const url = process.env.LOCALURL;
+
   let payload = {
     ...req.body,
     id: req.params.id,
+  }
+  if(payload.icon || req.file) {
+    payload.icon = {
+      ...req.file,
+      full_path: process.env.IMAGE_PATH + req.file.filename
+    };
+    payload.icon_path = `${url}/uploads/images/${req.file.filename}`;
   }
   let options = {
     returnDocument: 'after', 
     runValidators: true
   }
-
+  
   //* data validations
   validateReq(req, res);
-
+  
   AmenityModel.findOneAndUpdate({ _id: payload.id }, payload, options)
   .then(updateRes => {
     if(updateRes == null) {

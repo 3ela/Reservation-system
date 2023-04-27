@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const { mongooseInit } = require('../config/db');
 const { validateUser } = require('../config/jwt');
+const { getPermissionsFromJSON } = require('../config/permissions');
 const RoleModel = require('../models/role_model');
 const { 
   validateReq,
@@ -15,6 +16,14 @@ router.post('/', validateUser, (req, res, next) => {
       auth: true,
       data: findRes
     });
+  })
+});
+
+router.post('/permissions', validateUser, (req, res, next) => {
+  let permissionsList = getPermissionsFromJSON();
+  res.status(200).json({
+    msg: 'Permissions Found',
+    data: permissionsList.permissions,
   })
 });
 

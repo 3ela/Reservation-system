@@ -9,6 +9,10 @@ const { currentDate } = require('./scripts/helpers');
 const DBObj = require('./config/db');
 
 
+//* seeders
+const usersSeeder = require('./seeders/users_seeder');
+const permissionsSeeder = require('./seeders/permissions_seeder');
+
 //* app related
 const app = express();
 const port = process.env.PORT;
@@ -78,7 +82,6 @@ app.get('*', (req, res, next) => {
 
 //* error handler
 app.use((error, req, res, next) => {
-  console.log("app.use => error", error)
   if(error) {
     console.log('Server Error :', error)
     logger.error('Error :', error)
@@ -100,9 +103,12 @@ app.use((error, req, res, next) => {
   }
 })
 
+
 //* Server start
 app.listen(port, () => {
   var ListenDate = currentDate();
+  usersSeeder();
+  // permissionsSeeder(app);
   // console.log(`Listening on port ${port} at ${ListenDate}`)
   logger.notice(`Listening on port ${port} at ${ListenDate}`)
 })

@@ -103,6 +103,7 @@ router.post('/signup', validateUser, authUser, signupValidations, (req, res, nex
 })
 
 router.post('/logout', (req, res, next) => {
+  //todo remove session for this user
   res.status(200).json({
     msg: 'user logged out'
   });
