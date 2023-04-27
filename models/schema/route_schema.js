@@ -15,6 +15,11 @@ const schema = new Schema({
     },
   },
 
+  status: {
+    type: Boolean,
+    default: true
+  },
+
   //* forign key
   departure_place_id: {
     type: Schema.Types.ObjectId,

@@ -13,6 +13,9 @@ const schema = new Schema({
   address: {
     type: String
   },
+  status: {
+    type: Boolean
+  },
 
   //* forign keys
   amenities_ids: [{

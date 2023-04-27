@@ -13,7 +13,7 @@ const {
 const { differenceBetweenTwoArrays, formateDate } = require('../scripts/helpers');
 
 const schema = new Schema({
-  time: {
+  time_interval: {
     start_date: {
       type: Date,
       required: true
@@ -22,6 +22,9 @@ const schema = new Schema({
       type: Date,
       required: true
     },
+  },
+  price: {
+    type: Number,
   },
   reservation_capacity: {
     type: Number,
