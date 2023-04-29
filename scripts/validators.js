@@ -42,7 +42,7 @@ validatorsObj = {
     check('name', 'name is required').not().isEmpty(),
     check('city', 'city is required').not().isEmpty(),
     check('address', 'address is required').not().isEmpty(),
-    check('status', 'city is a boolean').isBoolean(),
+    // check('status', 'status is a boolean').isBoolean(),
   ],
   roomValids: [
     check('number', 'number is required').not().isEmpty().isInt(),
@@ -50,7 +50,7 @@ validatorsObj = {
     check('price_per_night', 'price per night is required').not().isEmpty().isDecimal(),
     check('hotel_id', 'hotel id  is required').not().isEmpty(),
     check('reserve_module', 'reserve_module is not found').isIn(['rooms', 'trips']),
-    check('status', 'city is a boolean').isBoolean(),
+    // check('reserve_status', 'reserve_status is a boolean').isBoolean(),
   ],
   roomDeleteManyValids: [
     check('rooms_ids', 'room\'s ids is required').not().isEmpty(),
@@ -77,8 +77,8 @@ validatorsObj = {
   ],
   placeValids: [
     check('name', 'name is required').not().isEmpty(),
-    check('coordinates.longitude', 'longitude must be a number').isDecimal(),
-    check('coordinates.latitude', 'latitude must be a number').isDecimal()
+    check('coordinates.long', 'longitude must be a number').isDecimal(),
+    check('coordinates.lat', 'latitude must be a number').isDecimal()
 
   ],
   tripValids: [

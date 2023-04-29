@@ -1,31 +1,41 @@
 const supertest = require("supertest");
 const { createInitialData } = require('./helpers.test');
 
-const item = 'amenity';
-const items = 'amenities';
+const item = 'place';
+const items = 'places';
 const baseUrl = 'http://localhost:8001';
 
 const updateItem = {
-  name: 'test updated'+ item,
-  unit_count: 3,
+  name: "hurghda down town",
+  address_details: "city, that street here",
+  coordinates: {
+      long: 26,
+      lat: 26
+  }
 }
 const newItem = {
-  name: 'test '+ item,
-  unit_count: 2,
+  name: "hurghda up town",
+  address_details: "city, that street there",
+  coordinates: {
+      long: 36,
+      lat: 36
+  }
 }
-var token, createdItem;
+var token, createdItem, parentItem;
 
 describe(`testing the ${items} route`, () => {
   beforeAll(async () => {
-    
+    //* creating a city to be a 
     await createInitialData(items, newItem)
       .then(res => {
         token = res.token;
+        parentItem = res.createdItem;
+      })
+    await createInitialData(items, newItem, token)
+      .then(res => {
         createdItem = res.createdItem;
       })
   })
-
-
 
   describe(`testing the listing of the ${items}`, () => {
     it(`should return a list of ${items}`, async () => {
@@ -44,7 +54,7 @@ describe(`testing the ${items} route`, () => {
         // .attach('icon', './api/__tests__/amenities.png')
         // .field('name', 'test update')
         // .field('unit_count', 3)
-        .send(updateItem)
+        .send({...updateItem, parent_id: parentItem.body.data._id})
       
       expect(res.statusCode).toBe(200);
       expect(res.body.msg).toBeDefined();
@@ -68,8 +78,15 @@ describe(`testing the ${items} route`, () => {
         .delete(`/${items}/${createdItem.body.data._id}/delete`)
         .set({ Authorization:'Bearer ' + token })
 
+      const parentRes = await supertest(baseUrl)
+        .delete(`/${items}/${parentItem.body.data._id}/delete`)
+        .set({ Authorization:'Bearer ' + token })
+
       expect(res.statusCode).toBe(200);
-      expect(res.body.data._id).toEqual(createdItem.body.data._id)
+      expect(res.body.data._id).toEqual(createdItem.body.data._id);
+
+      expect(parentRes.statusCode).toBe(200);
+      expect(parentRes.body.data._id).toEqual(parentItem.body.data._id);
     })
   })
 })

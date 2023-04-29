@@ -98,6 +98,7 @@ router.put('/:id/update', validateUser, roomValids, (req, res, next) => {
         msg: `Update successfully`,
         data: updateRes
       });
+      console.log("res.status => data:", updateRes)
     }
   })
 });
@@ -121,6 +122,7 @@ router.delete('/:id/delete', validateUser, (req, res, next) => {
 });
 
 router.delete('/many', validateUser, roomDeleteManyValids, (req, res, next) => {
+  console.log("router.delete => req.body:", req.body)
   if(req.body.rooms_ids && req.body.rooms_ids?.length != 0) {
     payload = [...req.body.rooms_ids];
   }
@@ -146,5 +148,3 @@ router.delete('/many', validateUser, roomDeleteManyValids, (req, res, next) => {
 
 
 module.exports = router;
-
-// todo room data validation

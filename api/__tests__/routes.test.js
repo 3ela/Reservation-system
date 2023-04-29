@@ -1,8 +1,8 @@
 const supertest = require("supertest");
 const { createInitialData } = require('./helpers.test');
 
-const item = 'amenity';
-const items = 'amenities';
+const item = 'route';
+const items = 'routes';
 const baseUrl = 'http://localhost:8001';
 
 const updateItem = {

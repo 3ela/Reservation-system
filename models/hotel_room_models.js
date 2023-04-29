@@ -34,6 +34,7 @@ HotelSchema.pre('save', function (next) {
 });
 
 HotelSchema.post('save', function(doc, next) {
+  console.log("HotelSchema.post => doc:", doc)
   //* create rooms in RoomModel with current hotel Id
   if(doc.rooms && doc.rooms.length != 0) {
     let createRooms = doc.rooms.map(room => {
@@ -95,7 +96,7 @@ HotelSchema.pre('findOneAndUpdate', async function(next) {
     await RoomModel.bulkWrite([...updateRooms])
       .then(updateRes => {
         console.log("HotelSchema.pre => updateRes", updateRes)
-        if(updateRes.hasWriteErrors()) {
+        if(updateRes.result.writeErrors.length > 0 && updateRes.result.ok != 1) {
           next({
             msg: `error updating hotel rooms`,
             err: updateRes.writeErrors
@@ -112,6 +113,8 @@ HotelSchema.pre('findOneAndUpdate', async function(next) {
   }
   
 });
+
+//todo delete hotel with rooms
 
 //* ---------------
 //* Room Model Hooks

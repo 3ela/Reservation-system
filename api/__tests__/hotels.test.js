@@ -1,4 +1,5 @@
 const supertest = require("supertest");
+const { createInitialData } = require('./helpers.test');
 
 const item = 'hotel';
 const items = 'hotels';
@@ -6,27 +7,45 @@ const baseUrl = 'http://localhost:8001';
 
 const updateItem = {
   name: 'test updated'+ item,
-  unit_count: 3,
+  address: "cairo downtown",
+  city: "cairo"
 }
 const newItem = {
   name: 'test '+ item,
-  unit_count: 2,
+  address: "alex downtown",
+  city: "alex"
 }
-const user = {
-  email: 'admin3@email.com',
-  password: '1234567m!',
-}
-var token, createdItem;
+var rooms = [
+  {
+       number: 340,
+       type: "suit",
+       guest_capacity: 3,
+       price_per_night: 2000
+   },
+   {
+       number: 341,
+       type: "medium room",
+       guest_capacity: 4,
+       price_per_night: 1000
+   },
+   {
+       number: 342,
+       type: "large room",
+       guest_capacity: 8,
+       price_per_night: 1500
+   }      
+]
+
+var token, createdItem, createdItemWithRooms;
 
 describe(`testing the ${items} route`, () => {
   beforeAll(async () => {
-    let userRes = await supertest(baseUrl).post(`/users/login`).send(user);
     
-    token = userRes.body.token;
-    createdItem = await supertest(baseUrl)
-      .post(`/${items}/create`)
-      .send(newItem)
-      .set({ Authorization: 'Bearer ' + token });
+    await createInitialData(items, newItem)
+      .then(res => {
+        token = res.token;
+        createdItem = res.createdItem;
+      })
   })
 
 
@@ -34,23 +53,47 @@ describe(`testing the ${items} route`, () => {
     it(`should return a list of ${items}`, async () => {
       const res = await supertest(baseUrl).post(`/${items}`).set({ Authorization:'Bearer ' + token });
       expect(res.statusCode).toBe(200);
-      expect(res.body.msg).toMatch('Amenities Found');
+      expect(res.body.msg).toBeDefined();
     })
   });
+
+  describe(` testing create of ${item} with Rooms`, () => {
+    it(`should create a new ${item} && add rooms to it`, async () => {
+      const res = await supertest(baseUrl)
+        .post(`/${items}/create`)
+        .set({ Authorization:'Bearer ' + token })
+        .send({...newItem, rooms})
+      
+      createdItemWithRooms = res;
+
+      expect(res.statusCode).toBe(200);
+      expect(res.body.data.rooms_ids).toBeDefined();
+    })
+  })
 
   describe(` testing update of ${item}`, () => {
     it(`should update current ${item} && change icon if sent to the api`, async () => {
       const res = await supertest(baseUrl)
         .put(`/${items}/${createdItem.body.data._id}/update`)
         .set({ Authorization:'Bearer ' + token })
-        .attach('icon', './api/__tests__/amenities.png')
-        .field('name', 'test update')
-        .field('unit_count', 3)
+        .send(updateItem)
       
       expect(res.statusCode).toBe(200);
-      expect(res.body.data.icon_path).toBeDefined();
+      expect(res.body.data.name).toMatch('test updated'+ item);
     })
   })
+
+  // describe(` testing update of ${item} with rooms`, () => {
+  //   it(`should update current ${item} && change icon if sent to the api`, async () => {
+  //     const res = await supertest(baseUrl)
+  //       .put(`/${items}/${createdItem.body.data._id}/update`)
+  //       .set({ Authorization:'Bearer ' + token })
+  //       .send(updateItem)
+      
+  //     expect(res.statusCode).toBe(200);
+  //     expect(res.body.data.icon_path).toBeDefined();
+  //   })
+  // })
   
   describe(` testing get One ${item}`, () => {
     it(`should get that one row by id`, async () => {
@@ -62,7 +105,7 @@ describe(`testing the ${items} route`, () => {
       expect(res.body.data._id).toEqual(createdItem.body.data._id)
     })
   })
-
+  
   describe(` testing delete One ${item}`, () => {
     it(`should delete that one row by id`, async () => {
       const res = await supertest(baseUrl)
@@ -71,6 +114,16 @@ describe(`testing the ${items} route`, () => {
 
       expect(res.statusCode).toBe(200);
       expect(res.body.data._id).toEqual(createdItem.body.data._id)
+    })
+  })
+  describe(` testing delete One ${item} with rooms`, () => {
+    it(`should delete that one row by id which contains rooms`, async () => {
+      const res = await supertest(baseUrl)
+        .delete(`/${items}/${createdItemWithRooms.body.data._id}/delete`)
+        .set({ Authorization:'Bearer ' + token })
+
+      expect(res.statusCode).toBe(200);
+      expect(res.body.data._id).toEqual(createdItemWithRooms.body.data._id)
     })
   })
 })

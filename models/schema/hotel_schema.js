@@ -14,7 +14,8 @@ const schema = new Schema({
     type: String
   },
   status: {
-    type: Boolean
+    type: Boolean,
+    default: true
   },
 
   //* forign keys

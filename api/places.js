@@ -89,7 +89,7 @@ router.put('/:id/update', validateUser, authUser, itemValids, (req, res, next) =
 });
 
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id/delete', (req, res, next) => {
 
   ItemModel.findOneAndDelete({ _id: req.params.id })
     .then(deleteRes => {
