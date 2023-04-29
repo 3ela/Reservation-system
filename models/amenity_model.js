@@ -59,7 +59,7 @@ schema.pre('findOneAndUpdate', async function(next) {
 schema.post('findOneAndDelete', async function(doc, next) {
   //* check rooms and hotels for existance
   //* then delete refrence
-  //todo delete any related icon
+  //* delete any related icon
   if(doc.icon_path) {
     fs.unlink(doc.icon_path, (err) => {
       if (err) {
